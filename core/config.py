@@ -113,27 +113,27 @@ class MetaConfig:
         Create configuration from environment variables.
         
         Args:
-            project_root: Project root path (default: current file's parent)
+            project_root: Project root path (default: current file's parent's parent)
             
         Returns:
             MetaConfig instance
         """
         if project_root is None:
-            project_root = Path(__file__).parent.absolute()
+            # Go up one level from core/ to get to metanew3/
+            project_root = Path(__file__).parent.parent.absolute()
         
         paths = PathConfig.from_project_root(project_root)
         
         models = ModelConfig(
-            weak_model_name=os.getenv('BASE_MODEL_NAME', '/home/share/hcz/qwen2.5-14b-awq'),
+            weak_model_name=os.getenv('BASE_MODEL_NAME', '/home/models/qwen_dpo4_lora'),
             strong_model_name=os.getenv('STRONG_MODEL_NAME', 'DeepSeek-R1'),
             strong_model_url=os.getenv('STRONG_MODEL_API_URL', 'https://llmapi.paratera.com/v1/'),
             strong_model_key=os.getenv('STRONG_MODEL_KEY', 'sk-0tKGY03c9OJPODlWGzAGPw'),
-            lora_model_path=os.getenv('LORA_MODEL_PATH'),
             max_model_len=int(os.getenv('MAX_MODEL_LEN', '32768')),
         )
         
         inference = InferenceConfig(
-            default_temperature=float(os.getenv('DEFAULT_TEMPERATURE', '0.0')),
+            default_temperature=float(os.getenv('DEFAULT_TEMPERATURE', '0.1')),
             default_top_p=float(os.getenv('DEFAULT_TOP_P', '0.95')),
             default_max_tokens=int(os.getenv('DEFAULT_MAX_TOKENS', '4096')),
             batch_size=int(os.getenv('BATCH_SIZE', '256')),

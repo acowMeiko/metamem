@@ -20,6 +20,7 @@ import logging
 from pathlib import Path
 from typing import List, Optional
 import json
+import re
 
 from core.config import MetaConfig, initialize_config, get_config
 from core.base import ReasoningInput
@@ -160,39 +161,175 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
         dpo_data = json.load(f)
     logger.info(f"Loaded {len(dpo_data)} DPO items")
     
-    # Convert DPO format to ReasoningInput
-    # DPO format: {"input": "Question: ... Error Analysis: ...", "rejected": "...", "chosen": "..."}
-    inputs = []
-    for item in dpo_data:
-        # Extract question and diff from input field
-        input_text = item.get('input', '')
-        
-        # Simple parsing (you may need more robust parsing)
-        import re
-        q_match = re.search(r'Question:\s*(.*?)\s*(?:Error Analysis:|Error Points:)', input_text, re.DOTALL)
-        question = q_match.group(1).strip() if q_match else ""
-        
-        # Extract task description if available
-        task_desc_match = re.search(r'Task Description:\s*(.*?)(?:\n\n|$)', input_text, re.DOTALL)
-        task_desc = task_desc_match.group(1).strip() if task_desc_match else None
-        
-        # Extract principles from chosen answer or input
-        # This depends on your DPO format
-        principles = []
-        principle_match = re.findall(r'Principle:\s*"([^"]+)"', item.get('chosen', ''))
-        if principle_match:
-            principles = principle_match
-        
-        if question and task_desc and principles:
-            inputs.append(ReasoningInput(
-                question=question,
-                answer="",
-                task_description=task_desc,
-                principles=principles,
-                metadata={'dpo_file': str(dpo_file)}
-            ))
+    if not isinstance(dpo_data, list):
+        logger.error(f"数据格式错误: 期望列表格式，实际为 {type(dpo_data)}")
+        return
     
-    logger.info(f"Extracted {len(inputs)} valid items with task descriptions and principles")
+    # ===== 阶段1: 数据预处理和过滤 =====
+    logger.info("阶段1/3: 数据预处理和过滤")
+    batch_data = []
+    for i, item in enumerate(dpo_data):
+        # 直接从数据集提取 question 和 diff 字段
+        question = item.get("question")
+        diff = item.get("diff")
+        
+        if not question or not diff:
+            logger.warning(f"第 {i} 项数据缺少 question 或 diff，跳过")
+            continue
+        
+        batch_data.append({
+            'index': i,
+            'question': question,
+            'diff': diff,
+            'chosen': item.get('chosen', '')
+        })
+    
+    logger.info(f"准备批处理 {len(batch_data)} 条数据")
+    
+    # ===== 阶段2: 批量生成任务描述 =====
+    logger.info("阶段2/3: 批量生成任务描述")
+    
+    # Setup inference engine for task description generation
+    engine = setup_inference_engine(config)
+    prompts = PromptTemplate()
+    
+    # 批量生成任务描述
+    questions = [item['question'] for item in batch_data]
+    
+    logger.info(f"批量生成 {len(questions)} 个任务描述...")
+    task_desc_prompts = [prompts.get_task_description_prompt(q) for q in questions]
+    task_descs_raw = engine.batch_inference(
+        prompts=task_desc_prompts,
+        model_type='weak',
+        batch_size=config.inference.batch_size,
+        max_tokens=config.inference.task_desc_max_tokens,
+        temperature=0.1
+    )
+    
+    # 从 chosen 字段提取原则
+    logger.info("提取 chosen 原则...")
+    regenerated_list = [item['chosen'] for item in batch_data]
+    
+    # 保存中间生成结果
+    intermediate_output_file = config.paths.output_dir / "stage2_generated.json"
+    logger.info(f"保存中间生成结果到: {intermediate_output_file}")
+    
+    def clean_markdown(text):
+        """清理 markdown 代码块标记"""
+        text_clean = text.strip()
+        if text_clean.startswith('```json'):
+            text_clean = text_clean[7:]
+        elif text_clean.startswith('```'):
+            text_clean = text_clean[3:]
+        if text_clean.endswith('```'):
+            text_clean = text_clean[:-3]
+        return text_clean.strip()
+    
+    intermediate_data = []
+    for i, (item, td, rl) in enumerate(zip(batch_data, task_descs_raw, regenerated_list)):
+        intermediate_data.append({
+            "index": item['index'],
+            "question": item['question'],
+            "diff": item['diff'],
+            "task_desc": clean_markdown(td),
+            "regenerated_principles": clean_markdown(rl)
+        })
+    
+    intermediate_output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(intermediate_output_file, 'w', encoding='utf-8') as f:
+        json.dump(intermediate_data, f, indent=2, ensure_ascii=False)
+    
+    # ===== 阶段3: 解析结果并构建 ReasoningInput =====
+    logger.info("阶段3/3: 解析结果并更新 Memory")
+    
+    def parse_task_description(task_desc_raw):
+        """解析任务描述 JSON"""
+        task_desc_clean = clean_markdown(task_desc_raw)
+        
+        try:
+            task_obj = json.loads(task_desc_clean)
+            return task_obj.get("taskDescription", {}).get("description")
+        except (json.JSONDecodeError, KeyError, AttributeError):
+            # 尝试正则提取
+            pattern = r'\{\s*"taskDescription"\s*:\s*\{\s*"description"\s*:\s*"([^"]+)"\s*\}\s*\}'
+            matches = list(re.finditer(pattern, task_desc_raw, re.DOTALL))
+            if matches:
+                json_str = matches[-1].group(0)
+                task_obj = json.loads(json_str)
+                return task_obj.get("taskDescription", {}).get("description")
+        return None
+    
+    def parse_principles(regenerated_raw):
+        """解析原则 JSON"""
+        regenerated_clean = clean_markdown(regenerated_raw)
+        
+        try:
+            principles_obj = json.loads(regenerated_clean)
+            output_list = principles_obj.get("output", [])
+            return [x.get("Principle") for x in output_list 
+                   if isinstance(x, dict) and "Principle" in x]
+        except (json.JSONDecodeError, KeyError, AttributeError):
+            # 尝试正则提取
+            json_match = re.search(
+                r'\{\s*"output"\s*:\s*\[[^\]]*?\{[^}]*?"Principle"[^}]*?\}[^\]]*?\]\s*\}',
+                regenerated_raw, re.DOTALL
+            )
+            if json_match:
+                json_str = json_match.group(0)
+                principles_obj = json.loads(json_str)
+                output_list = principles_obj.get("output", [])
+                return [x.get("Principle") for x in output_list 
+                       if isinstance(x, dict) and "Principle" in x]
+        return []
+    
+    # 解析并构建输入
+    inputs = []
+    for i, (item, task_desc_raw, regenerated_raw) in enumerate(zip(batch_data, task_descs_raw, regenerated_list)):
+        task_desc = parse_task_description(task_desc_raw)
+        principles = parse_principles(regenerated_raw)
+        
+        if not task_desc:
+            logger.warning(f"第 {item['index']} 项无法解析任务描述，跳过")
+            continue
+        
+        if not principles:
+            logger.warning(f"第 {item['index']} 项无法解析原则，跳过")
+            continue
+        
+        inputs.append(ReasoningInput(
+            question=item['question'],
+            answer="",
+            task_description=task_desc,
+            principles=principles,
+            metadata={'dpo_file': str(dpo_file), 'index': item['index']}
+        ))
+    
+    logger.info(f"成功解析 {len(inputs)} 个有效项")
+    
+    # 保存完整的生成内容到 output
+    full_results_file = config.paths.output_dir / f"stage2_full_results_{Path(dpo_file).stem}.json"
+    logger.info(f"保存完整生成结果到: {full_results_file}")
+    
+    full_results = []
+    for i, (item, task_desc_raw, regenerated_raw, reasoning_input) in enumerate(
+        zip(batch_data, task_descs_raw, regenerated_list, inputs)
+    ):
+        full_results.append({
+            "index": item['index'],
+            "question": item['question'],
+            "diff": item['diff'],
+            "chosen": item['chosen'],
+            "task_description_raw": task_desc_raw,
+            "task_description_parsed": reasoning_input.task_description,
+            "principles_raw": regenerated_raw,
+            "principles_parsed": reasoning_input.principles,
+            "metadata": reasoning_input.metadata
+        })
+    
+    full_results_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(full_results_file, 'w', encoding='utf-8') as f:
+        json.dump(full_results, f, indent=2, ensure_ascii=False)
+    logger.info(f"✓ 已保存 {len(full_results)} 条完整记录")
     
     # Setup memory manager
     memory = MemoryManager(path=str(config.paths.memory_file))
@@ -205,8 +342,27 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
     agent = StageTwoAgent(agent_config)
     
     # Process data
-    logger.info("Starting Stage 2 processing...")
+    logger.info("更新 Memory...")
     outputs = agent.process_batch(inputs)
+    
+    # 保存最终的 Memory 更新结果
+    memory_update_results_file = config.paths.output_dir / f"stage2_memory_updates_{Path(dpo_file).stem}.json"
+    logger.info(f"保存 Memory 更新结果到: {memory_update_results_file}")
+    
+    memory_updates = []
+    for inp, out in zip(inputs, outputs):
+        memory_updates.append({
+            "question": inp.question,
+            "task_description": out.task_description,
+            "principles": out.principles,
+            "memory_status": out.metadata.get('memory_status'),
+            "matched_task": out.metadata.get('matched_task'),
+            "index": inp.metadata.get('index')
+        })
+    
+    with open(memory_update_results_file, 'w', encoding='utf-8') as f:
+        json.dump(memory_updates, f, indent=2, ensure_ascii=False)
+    logger.info(f"✓ 已保存 {len(memory_updates)} 条 Memory 更新记录")
     
     logger.info(f"Stage 2 completed. Memory updated with {len(outputs)} items")
 
