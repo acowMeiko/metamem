@@ -65,7 +65,9 @@ def setup_inference_engine(config: MetaConfig):
     builder.set_defaults(
         temperature=config.inference.default_temperature,
         top_p=config.inference.default_top_p,
-        max_tokens=config.inference.default_max_tokens
+        max_tokens=config.inference.default_max_tokens,
+        repetition_penalty=config.inference.default_repetition_penalty,
+        frequency_penalty=config.inference.default_frequency_penalty
     )
     
     return builder.build()
@@ -203,7 +205,8 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
         model_type='weak',
         batch_size=config.inference.batch_size,
         max_tokens=config.inference.task_desc_max_tokens,
-        temperature=0.1
+        temperature=0.1,
+        repetition_penalty=1.1  # 提高重复惩罚避免冗余生成
     )
     
     # 从 chosen 字段提取原则

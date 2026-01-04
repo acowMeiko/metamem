@@ -58,6 +58,8 @@ class InferenceEngine:
         self.default_temperature = config.get('default_temperature', 0.0)
         self.default_top_p = config.get('default_top_p', 0.95)
         self.default_max_tokens = config.get('default_max_tokens', 2048)
+        self.default_repetition_penalty = config.get('default_repetition_penalty', 1.05)
+        self.default_frequency_penalty = config.get('default_frequency_penalty', 0.0)
         
         self._validate_config()
         logger.info("InferenceEngine initialized")
@@ -86,7 +88,9 @@ class InferenceEngine:
         temperature: Optional[float] = None,
         top_p: Optional[float] = None,
         max_tokens: Optional[int] = None,
-        stop: Optional[List[str]] = None
+        stop: Optional[List[str]] = None,
+        repetition_penalty: Optional[float] = None,
+        frequency_penalty: Optional[float] = None
     ) -> str:
         """
         Perform single inference.
@@ -98,6 +102,8 @@ class InferenceEngine:
             top_p: Top-p sampling (default: config value)
             max_tokens: Maximum tokens to generate (default: config value)
             stop: Stop sequences
+            repetition_penalty: Repetition penalty (vLLM only)
+            frequency_penalty: Frequency penalty (API only)
             
         Returns:
             Generated text
@@ -105,6 +111,8 @@ class InferenceEngine:
         temperature = temperature if temperature is not None else self.default_temperature
         top_p = top_p if top_p is not None else self.default_top_p
         max_tokens = max_tokens if max_tokens is not None else self.default_max_tokens
+        repetition_penalty = repetition_penalty if repetition_penalty is not None else getattr(self, 'default_repetition_penalty', 1.0)
+        frequency_penalty = frequency_penalty if frequency_penalty is not None else getattr(self, 'default_frequency_penalty', 0.0)
         
         model_config = self.weak_model if model_type == 'weak' else self.strong_model
         
@@ -115,7 +123,8 @@ class InferenceEngine:
                 temperature=temperature,
                 top_p=top_p,
                 max_tokens=max_tokens,
-                stop=stop
+                stop=stop,
+                repetition_penalty=repetition_penalty
             )
         else:
             # Use API
@@ -125,7 +134,8 @@ class InferenceEngine:
                 url=model_config.get('url'),
                 api_key=model_config.get('api_key'),
                 temperature=temperature,
-                max_tokens=max_tokens
+                max_tokens=max_tokens,
+                frequency_penalty=frequency_penalty
             )
     
     def batch_inference(
@@ -136,7 +146,9 @@ class InferenceEngine:
         temperature: Optional[float] = None,
         top_p: Optional[float] = None,
         max_tokens: Optional[int] = None,
-        stop: Optional[List[str]] = None
+        stop: Optional[List[str]] = None,
+        repetition_penalty: Optional[float] = None,
+        frequency_penalty: Optional[float] = None
     ) -> List[str]:
         """
         Perform batch inference (optimized for vLLM).
@@ -149,6 +161,8 @@ class InferenceEngine:
             top_p: Top-p sampling
             max_tokens: Maximum tokens to generate
             stop: Stop sequences
+            repetition_penalty: Repetition penalty (vLLM only)
+            frequency_penalty: Frequency penalty (API only)
             
         Returns:
             List of generated texts
@@ -156,6 +170,8 @@ class InferenceEngine:
         temperature = temperature if temperature is not None else self.default_temperature
         top_p = top_p if top_p is not None else self.default_top_p
         max_tokens = max_tokens if max_tokens is not None else self.default_max_tokens
+        repetition_penalty = repetition_penalty if repetition_penalty is not None else getattr(self, 'default_repetition_penalty', 1.0)
+        frequency_penalty = frequency_penalty if frequency_penalty is not None else getattr(self, 'default_frequency_penalty', 0.0)
         
         model_config = self.weak_model if model_type == 'weak' else self.strong_model
         
@@ -167,7 +183,8 @@ class InferenceEngine:
                 temperature=temperature,
                 top_p=top_p,
                 max_tokens=max_tokens,
-                stop=stop
+                stop=stop,
+                repetition_penalty=repetition_penalty
             )
         else:
             # For API, use concurrent calls
@@ -177,7 +194,8 @@ class InferenceEngine:
                 model_type=model_type,
                 max_workers=20,
                 temperature=temperature,
-                max_tokens=max_tokens
+                max_tokens=max_tokens,
+                frequency_penalty=frequency_penalty
             )
     
     def concurrent_api_inference(
@@ -284,7 +302,9 @@ class InferenceEngineBuilder:
             'strong_model': {},
             'default_temperature': 0.0,
             'default_top_p': 0.95,
-            'default_max_tokens': 2048
+            'default_max_tokens': 2048,
+            'default_repetition_penalty': 1.05,
+            'default_frequency_penalty': 0.0
         }
     
     def set_weak_model(
@@ -339,7 +359,9 @@ class InferenceEngineBuilder:
         self,
         temperature: Optional[float] = None,
         top_p: Optional[float] = None,
-        max_tokens: Optional[int] = None
+        max_tokens: Optional[int] = None,
+        repetition_penalty: Optional[float] = None,
+        frequency_penalty: Optional[float] = None
     ) -> 'InferenceEngineBuilder':
         """
         Set default inference parameters.
@@ -348,6 +370,8 @@ class InferenceEngineBuilder:
             temperature: Default temperature
             top_p: Default top_p
             max_tokens: Default max_tokens
+            repetition_penalty: Default repetition penalty (vLLM)
+            frequency_penalty: Default frequency penalty (API)
         """
         if temperature is not None:
             self.config['default_temperature'] = temperature
@@ -355,6 +379,10 @@ class InferenceEngineBuilder:
             self.config['default_top_p'] = top_p
         if max_tokens is not None:
             self.config['default_max_tokens'] = max_tokens
+        if repetition_penalty is not None:
+            self.config['default_repetition_penalty'] = repetition_penalty
+        if frequency_penalty is not None:
+            self.config['default_frequency_penalty'] = frequency_penalty
         return self
     
     def build(self) -> InferenceEngine:

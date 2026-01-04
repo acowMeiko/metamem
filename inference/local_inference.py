@@ -78,6 +78,7 @@ def get_vllm_model():
 
 def batch_inference(
     prompts: List[str],
+    repetition_penalty: Optional[float] = None,
     temperature: Optional[float] = None,
     top_p: Optional[float] = None,
     max_tokens: Optional[int] = None,
@@ -109,7 +110,8 @@ def batch_inference(
         temperature=temperature or config.DEFAULT_TEMPERATURE,
         top_p=top_p or config.DEFAULT_TOP_P,
         max_tokens=max_tokens or config.DEFAULT_MAX_TOKENS,
-        stop=stop
+        stop=stop,
+        repetition_penalty=repetition_penalty if repetition_penalty is not None else 1.05  # 添加重复惩罚
     )
     
     logger.debug(f"批量推理: {len(prompts)} 条数据")

@@ -6,7 +6,10 @@ def gpt_call(user, *,
              system_message: str = "You are a helpful assistant.",
              api_key: str = None,
              temperature: float = None,
-             top_p: float = None) -> str:
+             top_p: float = None,
+             max_tokens: int = None,
+             frequency_penalty: float = None,
+             presence_penalty: float = None) -> str:
     """调用GPT模型的API接口（支持 OpenAI 兼容格式）"""
     # 使用默认配置
     base_url = url or config.BASE_MODEL_API_URL
@@ -38,6 +41,14 @@ def gpt_call(user, *,
         "temperature": temperature,
         "top_p": top_p,
     }
+    
+    # 添加可选参数
+    if max_tokens is not None:
+        payload["max_tokens"] = max_tokens
+    if frequency_penalty is not None:
+        payload["frequency_penalty"] = frequency_penalty
+    if presence_penalty is not None:
+        payload["presence_penalty"] = presence_penalty
 
     try:
         response = requests.post(endpoint, headers=headers, json=payload)
