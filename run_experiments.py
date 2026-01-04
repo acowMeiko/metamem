@@ -211,7 +211,7 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
     regenerated_list = [item['chosen'] for item in batch_data]
     
     # 保存中间生成结果
-    intermediate_output_file = config.paths.output_dir / "stage2_generated.json"
+    intermediate_output_file = config.paths.output_dir / "stage_generated.json"
     logger.info(f"保存中间生成结果到: {intermediate_output_file}")
     
     def clean_markdown(text):
@@ -331,40 +331,40 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
         json.dump(full_results, f, indent=2, ensure_ascii=False)
     logger.info(f"✓ 已保存 {len(full_results)} 条完整记录")
     
-    # Setup memory manager
-    memory = MemoryManager(path=str(config.paths.memory_file))
+    # # Setup memory manager
+    # memory = MemoryManager(path=str(config.paths.memory_file))
     
-    # Create Stage 2 agent
-    agent_config = {
-        'memory_manager': memory,
-        'save_frequency': config.memory.save_frequency
-    }
-    agent = StageTwoAgent(agent_config)
+    # # Create Stage 2 agent
+    # agent_config = {
+    #     'memory_manager': memory,
+    #     'save_frequency': config.memory.save_frequency
+    # }
+    # agent = StageTwoAgent(agent_config)
     
-    # Process data
-    logger.info("更新 Memory...")
-    outputs = agent.process_batch(inputs)
+    # # Process data
+    # logger.info("更新 Memory...")
+    # outputs = agent.process_batch(inputs)
     
-    # 保存最终的 Memory 更新结果
-    memory_update_results_file = config.paths.output_dir / f"stage2_memory_updates_{Path(dpo_file).stem}.json"
-    logger.info(f"保存 Memory 更新结果到: {memory_update_results_file}")
+    # # 保存最终的 Memory 更新结果
+    # memory_update_results_file = config.paths.output_dir / f"stage2_memory_updates_{Path(dpo_file).stem}.json"
+    # logger.info(f"保存 Memory 更新结果到: {memory_update_results_file}")
     
-    memory_updates = []
-    for inp, out in zip(inputs, outputs):
-        memory_updates.append({
-            "question": inp.question,
-            "task_description": out.task_description,
-            "principles": out.principles,
-            "memory_status": out.metadata.get('memory_status'),
-            "matched_task": out.metadata.get('matched_task'),
-            "index": inp.metadata.get('index')
-        })
+    # memory_updates = []
+    # for inp, out in zip(inputs, outputs):
+    #     memory_updates.append({
+    #         "question": inp.question,
+    #         "task_description": out.task_description,
+    #         "principles": out.principles,
+    #         "memory_status": out.metadata.get('memory_status'),
+    #         "matched_task": out.metadata.get('matched_task'),
+    #         "index": inp.metadata.get('index')
+    #     })
     
-    with open(memory_update_results_file, 'w', encoding='utf-8') as f:
-        json.dump(memory_updates, f, indent=2, ensure_ascii=False)
-    logger.info(f"✓ 已保存 {len(memory_updates)} 条 Memory 更新记录")
+    # with open(memory_update_results_file, 'w', encoding='utf-8') as f:
+    #     json.dump(memory_updates, f, indent=2, ensure_ascii=False)
+    # logger.info(f"✓ 已保存 {len(memory_updates)} 条 Memory 更新记录")
     
-    logger.info(f"Stage 2 completed. Memory updated with {len(outputs)} items")
+    # logger.info(f"Stage 2 completed. Memory updated with {len(outputs)} items")
 
 
 def run_stage3(
