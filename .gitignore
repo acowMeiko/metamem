@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+logs/
+*.log
+log/
+
+# Output files
+output/*.json
+output/*.jsonl
+output/*/*.jsonl
+checkpoints/*.json
+
+# Memory files (可选，看是否要共享)
+# memory/*.json
+
+# Data files (大文件不提交)
+data/original_data/*.json
+data/clean/*
+data/test/*.json
+dataset/mmlu/*.json
+dataset/gsm8k/*.jsonl
+dataset/math/*.jsonl
+
+# Model files (不提交模型权重)
+em_model/**/*.bin
+em_model/**/*.safetensors
+em_model/**/*.pt
+em_model/**/*.onnx
+em_model/**/pytorch_model.bin
+
+# Temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Batch scripts outputs
+*.out
+
+# Large cache files
+vllm_cache.json
