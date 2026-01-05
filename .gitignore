@@ -45,10 +45,10 @@ logs/
 log/
 
 # Output files
-output/*.json
-output/*.jsonl
-output/*/*.jsonl
-checkpoints/*.json
+#output/*.json
+#output/*.jsonl
+#output/*/*.jsonl
+#checkpoints/*.json
 
 # Memory files (可选，看是否要共享)
 # memory/*.json
