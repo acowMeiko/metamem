@@ -49,11 +49,11 @@ Your task is to identify and extract the main task description from a given ques
 $question
 
 **Output Format (JSON only, no extra text):**
-{{
-  "taskDescription": {{
+{
+  "taskDescription": {
     "description": "Clear, abstract, and specific description of the task, focusing on the core action or objective."
-  }}
-}}
+  }
+}
 ''')
     
     # ==================== Answer Generation Prompts ====================
@@ -113,6 +113,7 @@ Given a high-quality and a low-quality answer to the same task, identify detaile
    - Quote or paraphrase the specific content from both answers
    - Indicate the aspect being affected
    - Explain why this difference matters
+4. **You MUST internally perform domain analysis and task categorization, but you MUST NOT output any analysis, reasoning steps, or explanations.
 
 **Important guidelines:**
 - Avoid vague language like "clearer" or "more logical" unless supported by concrete details

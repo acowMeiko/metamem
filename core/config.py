@@ -70,11 +70,11 @@ class InferenceConfig:
     default_temperature: float = 0.0
     default_top_p: float = 0.95
     default_max_tokens: int = 4096
-    default_repetition_penalty: float = 1.05  # 重复惩罚（1.0=无惩罚，>1.0=惩罚重复）
+    default_repetition_penalty: float = 1.1  # 重复惩罚（1.0=无惩罚，>1.0=惩罚重复）
     default_frequency_penalty: float = 0.0    # 频率惩罚（API模型用）
     
     # Task-specific max tokens
-    task_desc_max_tokens: int = 512           # 减少到512避免冗余
+    task_desc_max_tokens: int = 256          # 减少到256避免冗余
     diff_analysis_max_tokens: int = 1024
     principle_max_tokens: int = 2560
     answer_max_tokens: int = 2048
