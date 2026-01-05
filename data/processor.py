@@ -39,6 +39,7 @@ class DatasetProcessor:
         self.register('bbh', self._preprocess_bbh)
         self.register('mmlu', self._preprocess_mmlu)
         self.register('svamp', self._preprocess_svamp)
+        self.register('test_filter', self._preprocess_test_filter)
     
     def register(self, dataset_name: str, preprocessor: Callable) -> None:
         """
@@ -258,6 +259,29 @@ class DatasetProcessor:
                 })
         
         return processed
+    
+    @staticmethod
+    def _preprocess_test_filter(raw_data: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+        """
+        Preprocess test_filter dataset.
+        
+        Format: {
+            "problem": str,
+            "answer": str,
+            ...
+        }
+        
+        Map "problem" → "question"
+        """
+        logger.info(f"Preprocessing test_filter: {len(raw_data)} items")
+        return [
+            {
+                "question": item.get("problem", ""),
+                "answer": item.get("answer", "")
+            }
+            for item in raw_data
+            if item.get("problem") and item.get("answer")
+        ]
 
 
 class DatasetRegistry:

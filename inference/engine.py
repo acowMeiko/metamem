@@ -303,7 +303,7 @@ class InferenceEngineBuilder:
             'default_temperature': 0.0,
             'default_top_p': 0.95,
             'default_max_tokens': 2048,
-            'default_repetition_penalty': 1.05,
+            'default_repetition_penalty': 1.1,
             'default_frequency_penalty': 0.0
         }
     

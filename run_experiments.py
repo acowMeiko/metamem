@@ -366,7 +366,7 @@ def run_stage3(
         results.append({
             'question': out.question,
             'ground_truth': inp.answer,
-            'predicted_answer': out.chosen_answer,
+            'predicted_answer': out.chosen_answer,#这就是模型输出的答案
             'task_description': out.task_description,
             'has_principles': out.metadata.get('has_principles', False),
             'inference_type': out.metadata.get('inference_type', 'unknown')
