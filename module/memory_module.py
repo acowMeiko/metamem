@@ -88,6 +88,12 @@ class MemoryManager:
         return None, []
 
     def add_task(self, task_desc: str, principles: list):
+        # 类型验证：防止字符串被当作列表存储导致字符级迭代
+        if not isinstance(principles, list):
+            raise TypeError(
+                f"principles 必须是 list 类型，当前类型: {type(principles).__name__}。"
+                f"如果传入字符串，Python 会将其按字符迭代，导致数据损坏。"
+            )
         self.memory[task_desc] = principles
 
     def merge_principles(self, task_desc: str, new_principles: list):

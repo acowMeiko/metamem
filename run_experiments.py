@@ -167,55 +167,47 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
         logger.error(f"数据格式错误: 期望列表格式，实际为 {type(dpo_data)}")
         return
     
-    # ===== 阶段1: 数据预处理和过滤 =====
-    logger.info("阶段1/3: 数据预处理和过滤")
+    # ===== 阶段1: 数据预处理和验证 =====
+    logger.info("阶段1/2: 数据预处理和验证")
+    
+    # 检查是否所有数据都有 task_description
+    missing_taskdesc = [i for i, item in enumerate(dpo_data) if not item.get('task_description')]
+    
+    if missing_taskdesc:
+        logger.error(f"发现 {len(missing_taskdesc)} 条数据缺少 task_description 字段")
+        logger.error(f"缺失索引: {missing_taskdesc[:10]}{'...' if len(missing_taskdesc) > 10 else ''}")
+        logger.error("请先运行 add_task_descriptions.py 脚本为数据添加 task_description")
+        logger.error(f"示例命令: python add_task_descriptions.py --input {dpo_file}")
+        return
+    
+    logger.info("✓ 所有数据都包含 task_description 字段")
+    
+    # 准备批处理数据
     batch_data = []
     for i, item in enumerate(dpo_data):
-        # 直接从数据集提取 question 和 diff 字段
         question = item.get("question")
-        diff = item.get("diff")
+        task_description = item.get("task_description")
+        chosen = item.get("chosen", "")
         
-        if not question or not diff:
-            logger.warning(f"第 {i} 项数据缺少 question 或 diff，跳过")
+        if not question or not task_description:
+            logger.warning(f"第 {i} 项数据缺少 question 或 task_description，跳过")
+            continue
+        
+        if not chosen:
+            logger.warning(f"第 {i} 项数据缺少 chosen 原则，跳过")
             continue
         
         batch_data.append({
             'index': i,
             'question': question,
-            'diff': diff,
-            'chosen': item.get('chosen', '')
+            'task_description': task_description,
+            'chosen': chosen
         })
     
     logger.info(f"准备批处理 {len(batch_data)} 条数据")
     
-    # ===== 阶段2: 批量生成任务描述 =====
-    logger.info("阶段2/3: 批量生成任务描述")
-    
-    # Setup inference engine for task description generation
-    engine = setup_inference_engine(config)
-    prompts = PromptTemplate()
-    
-    # 批量生成任务描述
-    questions = [item['question'] for item in batch_data]
-    
-    logger.info(f"批量生成 {len(questions)} 个任务描述...")
-    task_desc_prompts = [prompts.get_task_description_prompt(q) for q in questions]
-    task_descs_raw = engine.batch_inference(
-        prompts=task_desc_prompts,
-        model_type='weak',
-        batch_size=config.inference.batch_size,
-        max_tokens=config.inference.task_desc_max_tokens,
-        temperature=0.1,
-        repetition_penalty=1.1  # 提高重复惩罚避免冗余生成
-    )
-    
-    # 从 chosen 字段提取原则
-    logger.info("提取 chosen 原则...")
-    regenerated_list = [item['chosen'] for item in batch_data]
-    
-    # 保存中间生成结果
-    intermediate_output_file = config.paths.output_dir / "stage_generated.json"
-    logger.info(f"保存中间生成结果到: {intermediate_output_file}")
+    # ===== 阶段2: 构建 ReasoningInput 并更新 Memory =====
+    logger.info("阶段2/2: 构建输入并更新 Memory")
     
     def clean_markdown(text):
         """清理 markdown 代码块标记"""
@@ -228,29 +220,21 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
             text_clean = text_clean[:-3]
         return text_clean.strip()
     
-    intermediate_data = []
-    for i, (item, td, rl) in enumerate(zip(batch_data, task_descs_raw, regenerated_list)):
-        intermediate_data.append({
-            "index": item['index'],
-            "question": item['question'],
-            "diff": item['diff'],
-            "task_desc": clean_markdown(td),
-            "regenerated_principles": clean_markdown(rl)
-        })
-    
-    intermediate_output_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(intermediate_output_file, 'w', encoding='utf-8') as f:
-        json.dump(intermediate_data, f, indent=2, ensure_ascii=False)
-    
-    # ===== 阶段3: 构建 ReasoningInput (直接使用字符串) =====
-    logger.info("阶段3/3: 构建输入并更新 Memory")
-    
-    # 直接使用生成的字符串构建输入
+    # 构建输入
     inputs = []
-    for i, (item, task_desc_raw, regenerated_raw) in enumerate(zip(batch_data, task_descs_raw, regenerated_list)):
-        # 清理 markdown 标记
-        task_desc = clean_markdown(task_desc_raw)
-        principles = clean_markdown(regenerated_raw)
+    for item in batch_data:
+        task_desc = item['task_description']
+        principles_raw = clean_markdown(item['chosen'])
+        
+        # 修复: 将字符串转换为列表，避免字符级迭代导致数据损坏
+        if isinstance(principles_raw, str):
+            # 按行分割原则，过滤空行
+            principles = [p.strip() for p in principles_raw.split('\n') if p.strip()]
+            # 如果没有分割成功，将整个字符串作为单个原则
+            if not principles:
+                principles = [principles_raw] if principles_raw else []
+        else:
+            principles = principles_raw if principles_raw else []
         
         if not task_desc or not principles:
             logger.warning(f"第 {item['index']} 项缺少任务描述或原则，跳过")
@@ -259,8 +243,8 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
         inputs.append(ReasoningInput(
             question=item['question'],
             answer="",
-            task_description=task_desc,  # 直接使用字符串
-            principles=principles,        # 直接使用字符串
+            task_description=task_desc,
+            principles=principles,  # 现在是 list 类型
             metadata={'dpo_file': str(dpo_file), 'index': item['index']}
         ))
     

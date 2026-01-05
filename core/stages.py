@@ -44,10 +44,10 @@ class StageOneAgent(MetaAgentBase):
                 - max_workers: Concurrent workers for API calls
         """
         super().__init__(config)
-        self.engine = config['inference_engine']
-        self.prompts = config['prompt_template']
-        self.batch_size = config.get('batch_size', 64)
-        self.max_workers = config.get('max_workers', 20)
+        self.engine: InferenceEngine = config['inference_engine']
+        self.prompts: PromptTemplate = config['prompt_template']
+        self.batch_size: int = config.get('batch_size', 64)
+        self.max_workers: int = config.get('max_workers', 20)
     
     def _validate_config(self) -> None:
         """Validate required configuration."""
@@ -256,8 +256,8 @@ class StageTwoAgent(MetaAgentBase):
                 - save_frequency: How often to save memory (default: 50)
         """
         super().__init__(config)
-        self.memory = config['memory_manager']
-        self.save_frequency = config.get('save_frequency', 50)
+        self.memory: MemoryManager = config['memory_manager']
+        self.save_frequency: int = config.get('save_frequency', 50)
     
     def _validate_config(self) -> None:
         """Validate required configuration."""
@@ -351,10 +351,10 @@ class InferenceAgent(MetaAgentBase):
                 - batch_size: Batch size for inference
         """
         super().__init__(config)
-        self.engine = config['inference_engine']
-        self.prompts = config['prompt_template']
-        self.memory = config['memory_manager']
-        self.batch_size = config.get('batch_size', 64)
+        self.engine: InferenceEngine = config['inference_engine']
+        self.prompts: PromptTemplate = config['prompt_template']
+        self.memory: MemoryManager = config['memory_manager']
+        self.batch_size: int = config.get('batch_size', 64)
     
     def _validate_config(self) -> None:
         """Validate required configuration."""
