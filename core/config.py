@@ -36,7 +36,7 @@ class PathConfig:
             output_dir=root / 'output',
             data_dir=root / 'data',
             log_dir=root / 'logs',
-            memory_file=root / 'memory' / 'memory.json'
+            memory_file=root / 'memory' / 'memory_round1.json'
         )
 
 
