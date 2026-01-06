@@ -26,7 +26,12 @@ class MemoryManager:
         """加载内存数据，确保返回字典类型"""
         try:
             with open(self.path, "r", encoding="utf-8") as f:
-                loaded_data = json.load(f)
+                content = f.read().strip()
+                # 处理空文件情况
+                if not content:
+                    print(f"提示：{self.path} 为空文件，已初始化为空字典")
+                    return {}
+                loaded_data = json.loads(content)
             if isinstance(loaded_data, dict):
                 return loaded_data
             else:
@@ -35,8 +40,8 @@ class MemoryManager:
         except FileNotFoundError:
             print(f"提示：{self.path} 不存在，已初始化为空字典")
             return {}
-        except json.JSONDecodeError:
-            print(f"错误：{self.path} 中JSON格式无效，已初始化为空字典")
+        except json.JSONDecodeError as e:
+            print(f"错误：{self.path} 中 JSON 格式无效 ({e})，已初始化为空字典")
             return {}
 
     def save(self):
@@ -105,6 +110,7 @@ class MemoryManager:
         """
         # 如果 memory 为空，全部返回未匹配
         if not self.memory:
+            logging.info(f"Memory 为空，所有 {len(task_descs)} 个任务将作为新任务添加")
             return [(task, None, []) for task in task_descs]
         
         memory_tasks = list(self.memory.keys())
