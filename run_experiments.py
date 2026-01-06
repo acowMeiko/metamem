@@ -120,16 +120,43 @@ def run_stage1(
     }
     agent = StageOneAgent(agent_config)
     
-    # Process data
-    logger.info("Starting Stage 1 processing...")
-    outputs = agent.process_batch(inputs)
-    
-    # Save DPO format
+    # Determine output path
     if output_path is None:
         output_path = config.paths.output_dir / f"dpo_{dataset_name}.json"
     else:
         output_path = Path(output_path)
     
+    # Check if DPO file exists and determine processing mode
+    file_exists = output_path.exists() and output_path.stat().st_size > 0
+    skip_chosen = False
+    
+    if file_exists:
+        logger.info("=" * 60)
+        logger.info("检测到现有 DPO 文件")
+        logger.info("=" * 60)
+        try:
+            with open(output_path, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+            if isinstance(existing_data, list):
+                logger.info(f"现有数据条数: {len(existing_data)}")
+                skip_chosen = True
+        except Exception as e:
+            logger.warning(f"无法读取现有文件: {e}")
+        
+        if skip_chosen:
+            logger.info("将启用增量更新模式:")
+    else:
+        logger.info("=" * 60)
+        logger.info("完整生成模式")
+        logger.info("=" * 60)
+        logger.info("将生成所有字段（首次创建 DPO 数据）")
+        logger.info("=" * 60)
+    
+    # Process data with skip_chosen flag
+    logger.info("Starting Stage 1 processing...")
+    outputs = agent.process_batch(inputs, skip_chosen=skip_chosen)
+    
+    # Save DPO format (自动判断增量更新 or 完整生成)
     agent.save_dpo_format(outputs, output_path)
     logger.info(f"Stage 1 completed. Output saved to {output_path}")
 
@@ -150,7 +177,7 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
     # Determine DPO file path
     if dpo_file is None:
         # Use default from data directory
-        dpo_file = config.paths.data_dir / 'dpo_llamafactory' / 'dpo_level4.json'
+        dpo_file = config.paths.data_dir / 'dpo_llamafactory' / 'dpo_level1.json'
     else:
         dpo_file = Path(dpo_file)
     
@@ -172,36 +199,29 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
     
     # 检查是否所有数据都有 task_description
     missing_taskdesc = [i for i, item in enumerate(dpo_data) if not item.get('task_description')]
-    
     if missing_taskdesc:
         logger.error(f"发现 {len(missing_taskdesc)} 条数据缺少 task_description 字段")
-        logger.error(f"缺失索引: {missing_taskdesc[:10]}{'...' if len(missing_taskdesc) > 10 else ''}")
-        logger.error("请先运行 add_task_descriptions.py 脚本为数据添加 task_description")
-        logger.error(f"示例命令: python add_task_descriptions.py --input {dpo_file}")
         return
-    
     logger.info("✓ 所有数据都包含 task_description 字段")
-    
     # 准备批处理数据
     batch_data = []
     for i, item in enumerate(dpo_data):
         question = item.get("question")
         task_description = item.get("task_description")
-        chosen = item.get("chosen", "")
+        rejected = item.get("rejected", "")
         
         if not question or not task_description:
             logger.warning(f"第 {i} 项数据缺少 question 或 task_description，跳过")
             continue
-        
-        if not chosen:
-            logger.warning(f"第 {i} 项数据缺少 chosen 原则，跳过")
+        if not rejected:
+            logger.warning(f"第 {i} 项数据缺少 rejected 原则，跳过")
             continue
         
         batch_data.append({
             'index': i,
             'question': question,
             'task_description': task_description,
-            'chosen': chosen
+            'rejected': rejected
         })
     
     logger.info(f"准备批处理 {len(batch_data)} 条数据")
@@ -209,22 +229,22 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
     # ===== 阶段2: 构建 ReasoningInput 并更新 Memory =====
     logger.info("阶段2/2: 构建输入并更新 Memory")
     
-    def clean_markdown(text):
-        """清理 markdown 代码块标记"""
-        text_clean = text.strip()
-        if text_clean.startswith('```json'):
-            text_clean = text_clean[7:]
-        elif text_clean.startswith('```'):
-            text_clean = text_clean[3:]
-        if text_clean.endswith('```'):
-            text_clean = text_clean[:-3]
-        return text_clean.strip()
+    # def clean_markdown(text):
+    #     """清理 markdown 代码块标记"""
+    #     text_clean = text.strip()
+    #     if text_clean.startswith('```json'):
+    #         text_clean = text_clean[7:]
+    #     elif text_clean.startswith('```'):
+    #         text_clean = text_clean[3:]
+    #     if text_clean.endswith('```'):
+    #         text_clean = text_clean[:-3]
+    #     return text_clean.strip()
     
     # 构建输入
     inputs = []
     for item in batch_data:
         task_desc = item['task_description']
-        principles_raw = clean_markdown(item['chosen'])
+        principles_raw = item['rejected']
         
         # 修复: 将字符串转换为列表，避免字符级迭代导致数据损坏
         if isinstance(principles_raw, str):
@@ -252,7 +272,6 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
     
     # Setup memory manager
     memory = MemoryManager(path=str(config.paths.memory_file))
-    
     # Create Stage 2 agent
     agent_config = {
         'memory_manager': memory,

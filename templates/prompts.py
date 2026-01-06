@@ -189,6 +189,25 @@ Existing_principle: $old
 </input>
 ''')
     
+    SEMANTIC_MATCH_TEMPLATE = Template('''
+Please strictly compare the core semantics of the following two mathematical reasoning task descriptions and determine whether they express exactly the same meaning.
+
+Core judgment criteria:
+1.  The **essence of the mathematical problem stem** is consistent (including known conditions, solving objectives, and constraint limitations);
+2.  There are no substantive differences in the **mathematical objects, operational relationships, and reasoning directions** involved;
+3.  Only differences in expression order or wording (e.g., "Find the value of A" vs "Calculate the result of A") without changing the core solving objective are considered the same;
+4.  If there are additions/reductions of known conditions, changes in solving objectives, or modifications of constraint conditions, they are considered different.
+
+Task 1: $task1
+Task 2: $task2
+
+Notes:
+1.  Only judge the semantic consistency of the task descriptions, without performing specific mathematical calculations;
+2.  The output result can only be "Yes" or "No", and no additional explanations, punctuation, or supplementary content are allowed.
+
+Are they the same:'''
+    )
+    
     # ==================== Dialogue Format Template ====================
     
     DIALOGUE_FORMAT = Template("""<|im_start|>user\n$query<|im_end|>\n<|im_start|>assistant\n""")
@@ -285,6 +304,22 @@ Existing_principle: $old
             old=old_principle
         )
     
+    def get_semantic_match_prompt(self, task1: str, task2: str) -> str:
+        """
+        Get prompt for semantic task matching.
+        
+        Args:
+            task1: First task description
+            task2: Second task description
+            
+        Returns:
+            Formatted prompt
+        """
+        return self.SEMANTIC_MATCH_TEMPLATE.substitute(
+            task1=task1,
+            task2=task2
+        )
+    
     def format_dialogue(self, query: str) -> str:
         """
         Format a query in dialogue format (for certain models).
@@ -311,6 +346,7 @@ Existing_principle: $old
             'diff_analysis': self.DIFF_ANALYSIS_TEMPLATE,
             'principle': self.PRINCIPLE_TEMPLATE,
             'principle_match': self.PRINCIPLE_MATCH_TEMPLATE,
+            'semantic_match': self.SEMANTIC_MATCH_TEMPLATE,
             'dialogue_format': self.DIALOGUE_FORMAT
         }
 

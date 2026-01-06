@@ -46,7 +46,6 @@ def get_vllm_model():
             
             logger.info("=" * 60)
             logger.info("初始化vLLM本地模型...")
-            logger.info(f"模型路径: {config.BASE_MODEL_NAME}")
             logger.info("=" * 60)
             
             _vllm_model = LLM(

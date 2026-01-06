@@ -36,7 +36,7 @@ class PathConfig:
             output_dir=root / 'output',
             data_dir=root / 'data',
             log_dir=root / 'logs',
-            memory_file=root / 'memory' / 'memory_round4.json'
+            memory_file=root / 'memory' / 'memory.json'
         )
 
 
@@ -127,7 +127,7 @@ class MetaConfig:
         paths = PathConfig.from_project_root(project_root)
         
         models = ModelConfig(
-            weak_model_name=os.getenv('BASE_MODEL_NAME', '/home/models/qwen_dpo4_lora'),
+            weak_model_name=os.getenv('BASE_MODEL_NAME', '/home/models/qwen_dpo1_lora'),
             strong_model_name=os.getenv('STRONG_MODEL_NAME', 'DeepSeek-R1'),
             strong_model_url=os.getenv('STRONG_MODEL_API_URL', 'https://llmapi.paratera.com/v1/'),
             strong_model_key=os.getenv('STRONG_MODEL_KEY', 'sk-0tKGY03c9OJPODlWGzAGPw'),
