@@ -15,9 +15,16 @@ Usage:
     python run_experiments.py --stage 3 --dataset gsm8k --dataset-path dataset/gsm8k/test.jsonl
 """
 
+import sys
+from pathlib import Path
+
+# Add current directory to Python path
+current_dir = Path(__file__).parent.absolute()
+if str(current_dir) not in sys.path:
+    sys.path.insert(0, str(current_dir))
+
 import argparse
 import logging
-from pathlib import Path
 from typing import List, Optional
 import json
 import re
