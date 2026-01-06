@@ -243,18 +243,62 @@ def run_stage2(dpo_file: Optional[str] = None) -> None:
     # 构建输入
     inputs = []
     for item in batch_data:
-        task_desc = item['task_description']
+        task_desc_raw = item['task_description']
         principles_raw = item['rejected']
         
-        # 修复: 将字符串转换为列表，避免字符级迭代导致数据损坏
-        if isinstance(principles_raw, str):
-            # 按行分割原则，过滤空行
-            principles = [p.strip() for p in principles_raw.split('\n') if p.strip()]
-            # 如果没有分割成功，将整个字符串作为单个原则
-            if not principles:
-                principles = [principles_raw] if principles_raw else []
+        # 解析 task_description：提取 JSON 中的 description 字段
+        task_desc = None
+        if isinstance(task_desc_raw, str):
+            try:
+                # 尝试找到第一个完整的 JSON 对象
+                import re
+                json_match = re.search(r'\{[^}]*"taskDescription"[^}]*\{[^}]*"description"[^}]*:([^}]*)\}[^}]*\}', task_desc_raw, re.DOTALL)
+                if json_match:
+                    # 提取 JSON 部分
+                    json_start = task_desc_raw.find('{')
+                    json_part = task_desc_raw[json_start:]
+                    # 找到第一个完整的 JSON 对象
+                    brace_count = 0
+                    for i, char in enumerate(json_part):
+                        if char == '{':
+                            brace_count += 1
+                        elif char == '}':
+                            brace_count -= 1
+                            if brace_count == 0:
+                                json_str = json_part[:i+1]
+                                break
+                    
+                    task_data = json.loads(json_str)
+                    task_desc = task_data.get('taskDescription', {}).get('description', '')
+                else:
+                    logger.warning(f"第 {item['index']} 项的 task_description 格式不符合预期")
+                    task_desc = task_desc_raw
+            except (json.JSONDecodeError, AttributeError, ValueError) as e:
+                logger.warning(f"第 {item['index']} 项解析 task_description 失败: {e}，使用原始值")
+                task_desc = task_desc_raw
         else:
-            principles = principles_raw if principles_raw else []
+            task_desc = task_desc_raw
+        
+        # 解析 rejected：提取 JSON 中的 Principle 列表
+        principles = []
+        if isinstance(principles_raw, str):
+            try:
+                # 尝试解析为 JSON
+                principles_data = json.loads(principles_raw)
+                # 提取 output 中的 Principle
+                if isinstance(principles_data, dict) and 'output' in principles_data:
+                    output_list = principles_data['output']
+                    if isinstance(output_list, list):
+                        principles = [item.get('Principle', '') for item in output_list if isinstance(item, dict) and 'Principle' in item]
+                        # 过滤空字符串
+                        principles = [p for p in principles if p.strip()]
+            except json.JSONDecodeError:
+                # 如果不是 JSON，按原来的方式处理
+                principles = [p.strip() for p in principles_raw.split('\n') if p.strip()]
+                if not principles:
+                    principles = [principles_raw] if principles_raw else []
+        elif isinstance(principles_raw, list):
+            principles = principles_raw
         
         if not task_desc or not principles:
             logger.warning(f"第 {item['index']} 项缺少任务描述或原则，跳过")
