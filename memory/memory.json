@@ -1,1 +1,1220 @@
-{}
+{
+  "Determine which mathematical statements regarding functions' properties are true.": [
+    "Address multiple aspects of the comparison for a comprehensive answer."
+  ],
+  "Simplify a trigonometric expression involving sine and cosine functions.": [
+    "Include both long-term and short-term causes to provide a comprehensive explanation."
+  ],
+  "Calculate the sum of the equal angles in two isosceles triangles where one has even angles and the other has odd angles, excluding the given 70° angle.": [
+    "Include all essential components to ensure completeness."
+  ],
+  "Determine the sum of two coprime integers representing the tangent of an equal internal angle formed by a point inside a triangle with specified side lengths.": [
+    "Ensure a comprehensive analysis by considering all relevant factors."
+  ],
+  "Determine whether repeatedly flipping signs in triangular regions formed by intersecting lines can transform any initial configuration of +1s and -1s in finite regions to an all +1s configuration.": [
+    "Provide a comprehensive overview of the topic to ensure completeness."
+  ],
+  "Determine side lengths and calculate the area of a triangle given partial side lengths and cosine of an angle.": [
+    "Provide detailed explanations for complex processes."
+  ],
+  "Calculate the area of triangle AMC where M is the foot of the perpendicular from vertex B to the angle bisector of angle C in triangle ABC with known total area.": [
+    "Provide specific examples or evidence to support general claims."
+  ],
+  "Calculate the tangent of angle B in a triangle given cosine of another angle and two side lengths.": [
+    "Include human contributions when discussing causes of climate change."
+  ],
+  "Determine the coefficients x and y for expressing vector AI as a linear combination of vectors AB and AC in a triangle where I is the incenter.": [
+    "Include both human and natural factors when discussing climate change causes."
+  ],
+  "Calculate sine and cosine of angle Q in a right triangle given two side lengths.": [
+    "Directly state the answer to the question."
+  ],
+  "Calculate angle B in a triangle using trigonometric identities and determine the length of BD where D is the midpoint of AC.": [
+    "Ensure factual accuracy in geographical information."
+  ],
+  "Calculate the length of side QR in a triangle given the lengths of two other sides and the median to one of those sides.": [
+    "Ensure factual accuracy in stated facts."
+  ],
+  "Determine the minimum perimeter of a triangle with sides of three consecutive integers.": [
+    "Include multiple causes when discussing the origins of significant historical events."
+  ],
+  "Determine the range of AB^2 + AC^2 for a triangle with BC=8 and median AD=5, then find the difference between the maximum and minimum values.": [
+    "Ensure factual accuracy in basic geographical knowledge."
+  ],
+  "Calculate the area of a triangle formed by dividing the diagonal of a rectangle into equal parts.": [
+    "Ensure answers are factually accurate."
+  ],
+  "Calculate the length of side AD in a quadrilateral given specific angle measures and one side length.": [
+    "Include a detailed and comprehensive list of factors when discussing complex topics like climate change."
+  ],
+  "Determine the maximum perimeter of a triangle with integer sides where one side is four times another and the third side is fixed at 20 units.": [
+    "Focus on key benefits and avoid unnecessary details."
+  ],
+  "Calculate the floor value of 1000 times the cosine of angle A in a specified geometric configuration.": [
+    "Provide specific examples to support general claims."
+  ],
+  "Determine the length of side BC in a triangle ABC given trigonometric conditions involving angles A and B, and the length of another side.": [
+    "Provide specific measurements and timing in recipes."
+  ],
+  "Calculate the distance between the incenter and circumcenter of a right-angled triangle.": [
+    "Identify specific and diverse challenges to provide a comprehensive answer."
+  ],
+  "Identify a number that is divisible by all integers.": [
+    "Ensure factual accuracy in identifying specific details such as names of places."
+  ],
+  "Evaluate trigonometric function using coordinates of a point on its terminal side.": [
+    "Provide specific examples to illustrate key points."
+  ],
+  "Determine the smallest increment in visitor count required to achieve a new total with unique digits.": [
+    "Detail biochemical processes with clarity and precision."
+  ],
+  "Determine the least prime divisor of the quadratic expression n^2 + n + 11 for an integer value of n.": [
+    "Prioritize the inclusion of essential components only."
+  ],
+  "Find a number within a specified range that shares a given greatest common divisor with another number.": [
+    "Address all significant contributing factors."
+  ],
+  "Determine the maximum number of cards that can stay in their initial positions when rearranging them such that each consecutive card differs by exactly one digit incremented or decremented by 1.": [
+    "Provide specific examples to clarify and substantiate claims."
+  ],
+  "Calculate the final value after consecutively applying two percentage increases to an initial amount.": [
+    "Provide a comprehensive comparison including all relevant aspects."
+  ],
+  "Calculate the number of distinct permutations of a multiset.": [
+    "Provide specific examples or details to substantiate general claims."
+  ],
+  "Determine the maximum possible minimum count of either remaining white or black chips after removing chips according to specified rules.": [
+    "Specify concrete health benefits when discussing the advantages of eating fruits."
+  ],
+  "Determine a complex number equidistant from three specified points in the complex plane.": [
+    "Include all key components in an explanation.",
+    "Provide sufficient detail without oversimplification."
+  ],
+  "Calculate the number of ways to select two non-adjacent positions to turn off among eight possible positions excluding the endpoints.": [
+    "Provide explanations for listed components to enhance understanding."
+  ],
+  "Determine the initial quantity of sweets Beth possessed based on the redistribution among three friends ending in equal shares.": [
+    "Explain the 'why' behind each challenge to provide a deeper understanding."
+  ],
+  "Calculate the time interval in minutes until the hour and minute hands of a clock coincide for the 21st time starting from 00:00.": [
+    "Incorporate human impact when discussing modern climate change."
+  ],
+  "Determine the number of $1 bills (x) given relationships between counts of different denominations and a total monetary sum.": [
+    "Provide specific examples to illustrate the benefits of renewable energy sources."
+  ],
+  "Determine the value of a real number 'a' for which one set is a subset of another based on their intersection.": [
+    "Specify concrete benefits to enhance the answer's informativeness."
+  ],
+  "Determine the unit digit of a two-digit house number based on given conditions involving primality, evenness, divisibility by seven, and containing the digit nine.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Calculate the number of arrangements for placing two specified individuals with exactly one person between them in a line of five.": [
+    "Ensure factual accuracy by cross-verifying information with reliable sources."
+  ],
+  "Determine the value of a monotonic function at a specific point given a functional equation involving exponentials.": [
+    "Detail the key components explicitly."
+  ],
+  "Determine the fundamental properties and extremum conditions of a trigonometric function.": [
+    "Ensure completeness by covering all key aspects of the topic."
+  ],
+  "Calculate the number of diagonals in a polygon and verify if a given value equals half of this total.": [
+    "Include formation processes and human impacts to provide a comprehensive explanation."
+  ],
+  "Verify the accuracy of using the Fibonacci numeral system for converting distances between kilometers and miles.": [
+    "Include all major contributing factors when addressing a multifaceted issue."
+  ],
+  "Calculate the number of men in business class based on total passengers and given percentages.": [
+    "Provide a detailed, step-by-step explanation for complex processes."
+  ],
+  "Determine the maximum value of n for which ((n!)!) divides (2004!)!": [
+    "Be specific about the factors contributing to the phenomenon."
+  ],
+  "Determine the number of digits in the product of two given large numbers.": [
+    "Ensure factual accuracy and relevance in answers."
+  ],
+  "Determine the number of unique solutions for an absolute value equation.": [
+    "Detail comprehensive impacts to provide a thorough understanding."
+  ],
+  "Determine the maximum number of simultaneously true conditions among a set of inequalities involving a variable x.": [
+    "Ensure the answer matches the question's specific factual requirements."
+  ],
+  "Calculate the probability that exactly one of two randomly chosen distinct divisors of a squared number is a perfect square.": [
+    "Directly state the answer to the question."
+  ],
+  "Calculate the result of a custom-defined binary operation between two positive integers.": [
+    "Use bullet points or lists to clearly organize information."
+  ],
+  "Determine the number of positive integers a ≤ 50 for which the quadratic equation x^2 + (2a+1)x + a^2 = 0 has integer solutions.": [
+    "Ensure factual accuracy by cross-verifying information from reliable sources."
+  ],
+  "Determine the count of positive integers below a specified limit that do not meet two distinct divisibility criteria.": [
+    "Directly state the answer when possible."
+  ],
+  "Find the minimum increment needed to transform a given number into a larger palindrome.": [
+    "Ensure factual accuracy by verifying key details against reliable sources."
+  ],
+  "Find the difference between two variables derived from equations involving their powers.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Find the least positive integer ending with 9 that is also divisible by 7.": [
+    "Maintain a clear and logical sequence in procedural instructions."
+  ],
+  "Calculate the sum of specified range odd integers.": [
+    "Ensure comprehensive coverage of all relevant categories."
+  ],
+  "Find the least positive integer that is a multiple of 32.": [
+    "Support each benefit with factual evidence to enhance credibility and completeness."
+  ],
+  "Calculate the sum of the digits of the sum of two integers given their individual digit sums and the number of carry operations during addition.": [
+    "Include both hardware and software components to provide a comprehensive overview.",
+    "Explain the role of each component to enhance understanding."
+  ],
+  "Determine the number of integers remaining after selectively erasing and reinstating multiples of specified numbers from an initial set.": [
+    "Provide a detailed, step-by-step explanation for complex processes."
+  ],
+  "Determine the minimum positive integer value for the constant term in a monic quartic polynomial with specified integer coefficients and given rational and integer roots.": [
+    "Ensure factual accuracy by cross-verifying information with reliable sources."
+  ],
+  "Calculate binomial coefficient n choose n-1 for any positive integer n.": [
+    "Ensure all critical components of a process are mentioned to maintain completeness."
+  ],
+  "Find a positive integer such that nine times its square minus the integer equals 2010.": [
+    "Provide a comprehensive list of examples."
+  ],
+  "Determine the number of positive integers n for which 2016 can be evenly divided among Moor and n friends.": [
+    "Provide specific, actionable recommendations."
+  ],
+  "Calculate the sum of selected integers in an arithmetic sequence.": [
+    "Explain the causes of global warming to enhance understanding."
+  ],
+  "Determine the count of numbers under 100 that are perfect sixth powers.": [
+    "Ensure factual accuracy by verifying information against reliable sources."
+  ],
+  "Find the minimum sum of four integers where the first three are in arithmetic progression and the last three are in geometric progression with a specified ratio between the second and third integer.": [
+    "Provide a comprehensive overview of all major effects."
+  ],
+  "Calculate the sine value of a transformed angle given the sine value of another angle.": [
+    "Specify concrete benefits over vague generalizations."
+  ],
+  "Determine the number of bases b for which log base b of 729 yields an integer result.": [
+    "Include specific details in instructions."
+  ],
+  "Find integers m, n, r, s such that certain numbers give the same remainders when divided by m and n respectively, then compute their sum.": [
+    "Incorporate specific examples to clarify and illustrate abstract concepts."
+  ],
+  "Determine the number of distinct triangles with integer sides and a given perimeter.": [
+    "Include significant trigger events in historical explanations."
+  ],
+  "Calculate the sum of the first m^2 multiples of n^2 given the sums of the first m multiples of n and the first m^3 multiples of n^3.": [
+    "Provide a comprehensive comparison of physical characteristics."
+  ],
+  "Determine the values of k and n in the factorial equation such that n is maximized, then compute their sum.": [
+    "Define key terms clearly before elaborating on their functions.",
+    "List and describe main functions concisely."
+  ],
+  "Calculate the sum of all integers n satisfying the inequality 0 < 4n < 30.": [
+    "Organize information in a logical sequence with clear interconnections."
+  ],
+  "Determine the angle β given trigonometric values for α and α-β.": [
+    "Incorporate specific examples to illustrate general statements."
+  ],
+  "Determine coefficients for expressing cosine power in terms of multiple angle cosines and calculate their squares' sum.": [
+    "Provide concrete examples to illustrate the benefits of a virtual assistant."
+  ],
+  "Calculate the sine of a specified angle in a right triangle using given side lengths.": [
+    "Provide a detailed breakdown of complex processes."
+  ],
+  "Determine the maximum possible median for a set of eleven numbers containing specified values with constraints.": [
+    "Detail specific benefits of the hybrid cloud environment.",
+    "Go beyond just the definition of a hybrid cloud."
+  ],
+  "Determine the number of positive integers n for which the sum of the first n natural numbers divides 6n without remainder.": [
+    "Provide a structured comparison when contrasting concepts.",
+    "Address all relevant aspects of the question.",
+    "Conclude with a summary of key points."
+  ],
+  "Determine the sum of three numbers based on given relationships between their mean, minimum value, maximum value, and median.": [
+    "Incorporate the impact of human activities when discussing climate change factors."
+  ],
+  "Calculate the sum of all positive integer factors of a given number.": [
+    "Include both symptoms and causes for a comprehensive explanation."
+  ],
+  "Determine the value of a function at a specific point using given functional equation properties.": [
+    "Provide explanations for each component mentioned."
+  ],
+  "Determine the minimum positive value of parameter 'a' for which the trigonometric equation holds true for all integer values of variable 'x'.": [
+    "Include a comprehensive list of relevant factors."
+  ],
+  "Determine the number of integer solutions for a quadratic inequality.": [
+    "Include multiple factors when discussing complex issues."
+  ],
+  "Express a sum of cosines as a product of cosines with integer coefficients.": [
+    "Highlight habitat differences."
+  ],
+  "Calculate the probability of selecting three distinct numbers from a specified set whose average equals a given value.": [
+    "Provide specific examples to illustrate benefits."
+  ],
+  "Calculate the sum of prime numbers within a specified range.": [
+    "Compare a variety of relevant aspects to ensure a comprehensive comparison."
+  ],
+  "Determine the sum of two variables based on logarithmic function properties and given conditions.": [
+    "Be concise and directly address the question."
+  ],
+  "Determine two whole numbers given their product and sum.": [
+    "Provide detailed explanations and examples to clarify complex processes."
+  ],
+  "Count odd numbers up to a specified limit with unique digits.": [
+    "Ensure answers cover all major contributing factors to provide a comprehensive explanation."
+  ],
+  "Find the minimum value of a function involving a variable greater than one.": [
+    "Detail the mechanisms involved in the process to explain how it works."
+  ],
+  "Minimize the sum of squares of three positive real numbers under a linear constraint.": [
+    "Ensure factual accuracy in stating the capital of a country."
+  ],
+  "Find the minimum distance between points (a,b) and (c,d) under given constraints.": [
+    "Support claims with credible evidence from reliable sources."
+  ],
+  "Determine how many integers in a specified range are divisible by at least one perfect cube greater than one.": [
+    "Incorporate step-by-step explanations for complex processes to ensure clarity and understanding."
+  ],
+  "Determine the value of y given equations involving x, y, z and their transformations.": [
+    "Use bullet points or numbered lists to outline sequential steps."
+  ],
+  "Determine the number of distinct prime factors of N given a logarithmic equation involving multiple nested logs.": [
+    "Include multiple key factors when addressing complex questions."
+  ],
+  "Determine the minimum number of integers whose total sum is 80, with each subset of five having a maximum sum of 19.": [
+    "Address multiple causal factors to provide a comprehensive analysis."
+  ],
+  "Determine the maximum possible minimum product among three variables whose sum and pairwise product sums are fixed.": [
+    "Provide a comprehensive analysis of all relevant factors."
+  ],
+  "Determine the value of a function at a specific point using a functional equation and an initial condition.": [
+    "Compare specific aspects of the topics directly to highlight differences."
+  ],
+  "Determine the count of distinct values for n = p^2 * q^2 where p and q are unique primes and n < 1000.": [
+    "Specify concrete examples to illustrate the benefits of a virtual assistant in the workplace."
+  ],
+  "Calculate the expected number of occurrences where the absolute difference between two adjacent numbers in a random permutation of 50 distinct numbers equals 1.": [
+    "Identify and name specific challenges or issues."
+  ],
+  "Calculate the area of an original triangle given the area of a similar triangle with sides tripled.": [
+    "Provide a comprehensive list of examples to fully cover the topic."
+  ],
+  "Determine the phase shift needed for the cosine function to transform into a sine function under given conditions.": [
+    "Provide specific examples and best practices to illustrate key points."
+  ],
+  "Determine the ratio \\(\\frac{b \\cos c}{a}\\) given functional equation constraints involving trigonometric functions.": [
+    "Provide a structured list with supporting details for clarity and completeness."
+  ],
+  "Determine event independence for dice rolls and calculate the probability of exactly one out of two shooters passing their assessment based on individual success probabilities.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Find the maximum value of the expression A*M*C + A*M + M*C + C*A given the constraint A + M + C = 12 where A, M, and C are nonnegative integers.": [
+    "Provide detailed explanations for each cause to enhance understanding."
+  ],
+  "Determine a quadratic polynomial with real coefficients given one complex root and the linear coefficient.": [
+    "Include a variety of benefits to provide a comprehensive answer."
+  ],
+  "Simplify an exponential expression by applying rules of exponents.": [
+    "Include concrete examples to illustrate abstract concepts."
+  ],
+  "Determine all possible functions mapping positive reals to positive reals satisfying a given functional equation.": [
+    "Ensure comprehensive coverage by including all relevant factors."
+  ],
+  "Calculate the sum of x-coordinates for the vertices of a polygon formed by taking midpoints twice from an initial polygon with known x-coordinate sum.": [
+    "Provide specific examples to clarify and support general statements about complex issues."
+  ],
+  "Find the value of p for which the coefficients of the second and third terms in the expansion of (x+y)^10 are equal, given x + 2y = 1 with x and y being positive.": [
+    "Provide context and additional relevant information to enrich the answer."
+  ],
+  "Determine the magnitude of the vector sum given linear combinations and resultant vectors.": [
+    "Provide specific examples to illustrate general points."
+  ],
+  "Convert a historical birth year from BC notation to an equivalent AD representation using a reference point.": [
+    "Support claims with specific examples and data."
+  ],
+  "Determine the product of the last two digits of an integer given conditions about divisibility and digit sum.": [
+    "Provide a detailed and comprehensive answer to ensure clarity and completeness."
+  ],
+  "Calculate the minimum distance between two points given fixed distances between intermediate points.": [
+    "Ensure a comprehensive coverage of all relevant factors."
+  ],
+  "Calculate the remainder of a geometric series sum modulo 500.": [
+    "Use clear and simple language to explain concepts, especially for non-expert audiences.",
+    "Incorporate visual aids to support explanations of complex processes."
+  ],
+  "Calculate the total amount consumed based on absorption rate and absorbed quantity.": [
+    "Use clear transitions and supporting details to enhance the logical flow and comprehensibility of the answer."
+  ],
+  "Calculate the number of diagonals in a convex decagon.": [
+    "Include both human and natural factors when discussing climate change causes."
+  ],
+  "Calculate the radius of an original sphere given the radius of a hemisphere formed by the sphere's collapse onto a flat surface, knowing both shapes have equal volumes.": [
+    "Ensure factual accuracy in basic geographical knowledge."
+  ],
+  "Find the nearest perfect square integer to a given number.": [
+    "Support claims with specific evidence and data from credible sources."
+  ],
+  "Calculate the area of a trapezoid given its base lengths and non-parallel side lengths.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Calculate the area of a shape formed by removing triangles from a 6x6 grid with unit cell sides.": [
+    "Provide detailed and specific explanations for clarity and understanding."
+  ],
+  "Calculate the Euclidean distance between two points in a Cartesian plane.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Calculate the remainder of a product when divided by 10.": [
+    "Use clear and accessible language to enhance comprehension."
+  ],
+  "Calculate the number of non-attacking placements for three indistinguishable rooks on a 6x6 chessboard.": [
+    "Support claims with evidence"
+  ],
+  "Calculate the length of intersection chord between two given polar curves.": [
+    "Ensure all essential components are included in the answer."
+  ],
+  "Determine the time required to travel down an escalator by standing still while it is in operation.": [
+    "Ensure answers are comprehensive by covering all relevant aspects of the topic."
+  ],
+  "Calculate the last five digits of a large product.": [
+    "Break down complex processes into clear, sequential steps and use simple, accessible language."
+  ],
+  "Determine the weight of one object based on its proportional relationship to another object's known weight.": [
+    "Provide a comprehensive overview of all significant contributing factors to ensure a complete and informative answer."
+  ],
+  "Determine the minimum possible weight of the lightest item in a set of uniquely weighted items based on given proportional relationships with the total weight of the remaining items.": [
+    "Ensure answers include all key components of the topic.",
+    "Provide detailed descriptions for each component mentioned."
+  ],
+  "Determine the number of times a given integer divides into a factorial.": [
+    "Include habitat comparisons when contrasting similar species."
+  ],
+  "Determine the ratio between the maximum and minimum possible sums of cubes for a sequence of integers under specified constraints.": [
+    "Use specific examples and evidence to support claims."
+  ],
+  "{\n  \"taskDescription\": {\n    \"description\": \"Determine the value of \\\\(\\varphi\\\\) for which the given trigonometric function becomes even.\"\n  }\n}\n```\nThe solution provided correctly identifies the core task as determining the value of \\(\\varphi\\) that makes the specified trigonometric function \\( f(x) = \\sin \\left( \\frac{x + \\varphi}{3} \\right) \\) an even function. This aligns with the requirement to focus solely on the essential objective without including extraneous context or steps. The generated JSON output accurately captures this in a succinct manner. \n\nTherefore, the final answer remains:\n\n```json\n{\n  \"taskDescription\": {\n    \"description\": \"Determine the value of \\\\(\\varphi\\\\) for which the given trigonometric function becomes even.\"\n  }\n}\n``` To ensure clarity and completeness, let's break down the reasoning step-by-step:\n\n1. **Domain Identification**: The question falls under the domain of Trigonometry.\n2. **Task Categorization**: Within Trigonometry, the specific task involves identifying conditions for a function to be even.\n3. **Core Objective Extraction**: The primary goal is to find the value of \\(\\": [
+    "Include specific examples to illustrate broader points."
+  ],
+  "Calculate the sine of a double angle given the cosine of a shifted angle.": [
+    "Ensure factual accuracy in stating the capital of France."
+  ],
+  "Convert parametric equations of a curve to its polar form and determine the length of the chord created by an intersecting line in polar coordinates.": [
+    "Provide clear, step-by-step explanations to enhance understanding."
+  ],
+  "Determine the maximum value of a trigonometric function and find the conditions under which this maximum occurs; use the function's value at a specific angle in a triangle to solve for another angle.": [
+    "Maintain relevance by focusing on the topic of the question."
+  ],
+  "Determine the extreme values and discuss the monotonicity of a logarithmic function with quadratic terms.": [
+    "Provide a clear, step-by-step explanation for complex processes."
+  ],
+  "Find the minimum perimeter of a polygon with sides parallel to the axes that encloses a circle of radius sqrt(2022).": [
+    "Ensure factual accuracy in responses."
+  ],
+  "Determine the number of unique $3 \\times 3$ matrices filled with distinct integers from 1 to 9 where each row and column is strictly increasing.": [
+    "Provide a structured list with definitions for clarity and completeness."
+  ],
+  "Calculate the product of the solutions for an absolute value equation.": [
+    "Highlight specific ecological impacts."
+  ],
+  "Calculate the total number of members after adding new members to a group.": [
+    "Ensure factual accuracy in your answer."
+  ],
+  "Calculate the cumulative area of shaded squares after repeatedly subdividing an initial square into smaller squares and shading one specific section for a given number of iterations.": [
+    "Ensure a comprehensive coverage of the topic."
+  ],
+  "Determine the maximum number of nested logarithms base 2 needed until the result of applying them to B becomes undefined.": [
+    "Provide detailed explanations to enhance understanding."
+  ],
+  "Calculate the length of the shorter base of a trapezoid given the length of the line segment connecting the midpoints of its diagonals and the length of the longer base.": [
+    "Address multiple facets of the question to ensure a comprehensive answer."
+  ],
+  "Calculate the conditional probability of one event based on prior knowledge of another independent event in a binary outcome scenario.": [
+    "An essay should have a clear structure with a thesis statement, coherent paragraphs, and a strong conclusion.",
+    "Good grammar and an interesting topic are important, but not sufficient on their own for a good essay."
+  ],
+  "Determine the value of a recursively-defined function at a specified point using an initial condition.": [
+    "Detail specific features and provide relevant examples to clarify differences."
+  ],
+  "Determine the value of b in the completed square form of a quadratic equation.": [
+    "Explain the mechanisms involved in the process, not just the inputs or outcomes."
+  ],
+  "Determine one variable's value given two linear equations involving the variables.": [
+    "Use a clear list format for sequential instructions."
+  ],
+  "Calculate the percentage of a line segment outside an inscribed circle relative to its containing square.": [
+    "Address multiple facets of complex issues."
+  ],
+  "Calculate (x-y)^2 given (x+y)^2 and xy values.": [
+    "Provide clear, comparative explanations for contrasting concepts."
+  ],
+  "Calculate the probability of a normally distributed random variable exceeding a certain value.": [
+    "Incorporate both human and natural factors when explaining the causes of climate change."
+  ],
+  "Determine the value of \\(\\varphi\\) such that the function \\(g(x) = f(x) + f'(x)\\), with \\(f(x) = \\cos(\\sqrt{3}x + \\varphi)\\), is even.": [
+    "Use a structured format to clearly present benefits and supporting details."
+  ],
+  "Calculate the probability that two individuals do not sit next to each other in a specified range of seats.": [
+    "Support claims with evidence to enhance credibility and completeness."
+  ],
+  "Calculate the total cost after applying a bulk purchase discount based on the provided price reduction information.": [
+    "Provide a structured comparison to clearly distinguish between compared elements."
+  ],
+  "Calculate the greatest common divisor of two specified expressions involving powers of 83.": [
+    "Provide a detailed and comprehensive explanation of the process."
+  ],
+  "Calculate the average age of two groups combined.": [
+    "Support claims with specific data and credible sources."
+  ],
+  "Solve for x in an exponential equation given y.": [
+    "Provide specific details to support broad categories."
+  ],
+  "Determine a quadratic polynomial given three points through which its graph passes.": [
+    "Incorporate detailed explanations with chemical or mathematical elements when possible."
+  ],
+  "Calculate the equivalent single discount for two successive percentage discounts.": [
+    "Ensure factual accuracy in stated information."
+  ],
+  "Calculate the binomial coefficient for two specified numbers.": [
+    "Provide a comprehensive list of causes with supporting evidence."
+  ],
+  "Find the sum of x solutions in a system involving a linear and a circular equation.": [
+    "Compare and contrast both subjects explicitly when asked about differences."
+  ],
+  "Calculate the probability that the area of a circle is less than its circumference based on the sum of two dice rolls.": [
+    "Conduct a thorough analysis of market trends, competitors, and customer needs."
+  ],
+  "Determine the time required for multiple faucets to fill a smaller volume container based on known rates.": [
+    "Provide multiple benefits when describing the advantages of a balanced diet."
+  ],
+  "Calculate the area of the smallest square that can enclose a given circle.": [
+    "Include both human and natural factors when discussing climate change."
+  ],
+  "Calculate the volume of water required to fully immerse four tangentially arranged iron balls inside a cylindrical container.": [
+    "Ensure factual accuracy in responses."
+  ],
+  "Determine the value of sin(2θ) given an infinite series sum involving powers of sin(θ).": [
+    "Clearly differentiate and illustrate distinct concepts with examples."
+  ],
+  "Calculate the area of a triangle given its vertex coordinates in three-dimensional space.": [
+    "Address all relevant aspects of the question to ensure completeness."
+  ],
+  "Determine in how many years the age ratio between two individuals will reach a specified value.": [
+    "Ensure zoological facts about habitat preferences are accurate."
+  ],
+  "Calculate the number of digits in a product of powers expressed in base 10.": [
+    "Provide comprehensive explanations."
+  ],
+  "Determine the sum of the squares of three whole number rates based on total distances covered under different time allocations for each activity.": [
+    "Include behavioral characteristics when comparing animals."
+  ],
+  "Perform division of two decimal numbers.": [
+    "Provide specific examples to illustrate abstract concepts."
+  ],
+  "Calculate the required score for the next test to achieve a specified average across all tests.": [
+    "Elaborate on specific technical challenges to provide depth and insight."
+  ],
+  "Evaluate a polynomial function at a given point.": [
+    "Illustrate abstract concepts with concrete examples."
+  ],
+  "Find the greatest integer not exceeding the cube root of a cubic polynomial expression.": [
+    "Consider multiple dimensions when evaluating key factors."
+  ],
+  "Determine the other root of a quadratic equation given one root.": [
+    "Provide detailed instructions with specific measurements and timing to ensure the recipient can follow the recipe accurately."
+  ],
+  "Calculate the value of (\\overrightarrow{a} ⊙ \\overrightarrow{b}) \\sin θ for given vector operation and angle constraints.": [
+    "Use bullet points to enhance clarity and readability."
+  ],
+  "Determine the number of rolls needed for the probability of rolling double sixes at least once to exceed one half.": [
+    "Ensure factual accuracy in stated information."
+  ],
+  "Calculate the product of the coordinates of the intersection points between two given circles.": [
+    "Provide a step-by-step explanation for complex processes."
+  ],
+  "Determine the number of distributions of 8 identical items among 4 recipients where each recipient gets at least one item and the first recipient gets at least two items.": [
+    "Provide detailed explanations for each benefit mentioned."
+  ],
+  "Calculate the ratio of energy release between two earthquakes based on their magnitudes using the Richter scale formula.": [
+    "Incorporate specific examples to illustrate the impact of climate change on biodiversity."
+  ],
+  "Add two octal numbers.": [
+    "Support claims with specific examples.",
+    "Use precise and concrete language.",
+    "Avoid redundancy."
+  ],
+  "Determine the optimal price reduction to maximize weekly profit while maintaining profitability.": [
+    "Include comparative analysis to highlight benefits"
+  ],
+  "Determine the maximum number of arrows that can be placed in an n x n grid such that each arrow points from one corner of its cell to the opposite corner, ensuring either consecutive arrows touch or are separated by at least two units.": [
+    "Include all necessary steps in a process description."
+  ],
+  "Determine the number of natural-number factors for a given integer based on its prime factorization.": [
+    "Specify the types of human activities contributing to climate change."
+  ],
+  "Calculate the sum of the ages of the youngest and oldest individuals in a set where the mean and median ages are known.": [
+    "Include multiple distinguishing features for clarity and completeness."
+  ],
+  "Determine the length of diagonal BD in a quadrilateral with specified side lengths.": [
+    "Provide specific examples to illustrate the impact of general statements."
+  ],
+  "Calculate the difference between two variables when one variable's 10% equals another variable's 20%.": [
+    "Provide a comprehensive list of causes when explaining complex phenomena."
+  ],
+  "Calculate the expression for a given integer raised to powers with coefficients.": [
+    "Provide specific examples to illustrate key concepts."
+  ],
+  "Determine the value of n for which the sum of the series involving reciprocals of consecutive terms in a defined recursive sequence equals a specified constant.": [
+    "Provide a detailed, step-by-step explanation for complex processes."
+  ],
+  "Determine the constant c for which a given circle's equation results in a specified radius.": [
+    "Ensure relevance by focusing on directly pertinent causes."
+  ],
+  "Calculate the ratio of peanuts to raisins after multiple additions and removals from an initial mixture.": [
+    "Address all relevant factors to ensure completeness."
+  ],
+  "Calculate the sum of the integer parts of logarithms base 2 for integers from 1 to 1024.": [
+    "Provide specific examples to illustrate the benefits of renewable energy."
+  ],
+  "Determine the count of permutations of {1, 2, ..., 10} where each pair in specified positions is ordered correctly and no three elements form an increasing subsequence.": [
+    "Include a comprehensive list of relevant factors."
+  ],
+  "Determine the value of n for which the sum of the first n terms of a sequence derived from an arithmetic progression reaches its maximum.": [
+    "Support claims with credible, recent, and peer-reviewed sources."
+  ],
+  "Determine the seventh term in the sequence for the third component of each tuple.": [
+    "Provide clear and logical transitions between steps to enhance the readability and comprehension of the process being described."
+  ],
+  "Calculate the sum of the first 10 terms in a recursively defined sequence.": [
+    "Incorporate visual aids to enhance understanding and retention."
+  ],
+  "Find the first term in a sequence where each term after the first is the sum of all preceding terms plus one, that surpasses 10000.": [
+    "Focus on relevant benefits."
+  ],
+  "Determine the value of y for which two congruent hexagons formed by cutting an 8x18 rectangle can be rearranged to form a square.": [
+    "Ensure geographical accuracy when mentioning locations."
+  ],
+  "Find the term in an alternating addition sequence that is closest to a specified target value.": [
+    "Provide a comprehensive list of benefits when discussing the advantages of renewable energy."
+  ],
+  "Determine the number of sequences for which the absolute values of elements are non-decreasing.": [
+    "Ensure answers are comprehensive by including all major contributing factors."
+  ],
+  "Find the arithmetic mean of two terms in a geometric sequence given the common ratio and a relationship between other terms.": [
+    "Provide specific examples and details to clarify and substantiate claims."
+  ],
+  "Determine the first term of a geometric sequence given its third and fourth terms.": [
+    "Provide a comprehensive list of benefits."
+  ],
+  "Determine the general term formula of an arithmetic sequence and find the minimum value of the sum of its first n terms along with the corresponding n value.": [
+    "Provide a step-by-step explanation for processes involving multiple stages."
+  ],
+  "Calculate the sum of the first 100 terms in a sequence defined by a recursive formula involving alternating signs.": [
+    "Include both human and natural factors when discussing climate change causes."
+  ],
+  "Find the second term of a geometric sequence given its first and fifth terms.": [
+    "Include a comprehensive overview of health, environmental, and ethical benefits when discussing the advantages of a vegetarian diet."
+  ],
+  "Calculate the area of triangle formed by the intersection points of a line with a specified slope through an ellipse's focus and the ellipse itself, along with the origin.": [
+    "Include both hardware and software components when describing a computer system."
+  ],
+  "Calculate the probability that two shooters with specified hit rates will shoot exactly four times before one hits the target.": [
+    "Maintain a balance between brevity and detail."
+  ],
+  "Calculate the probability of a specific sequence occurring when arranging distinct symbols randomly.": [
+    "Specify multiple contributing factors instead of a single broad term."
+  ],
+  "Determine the value of a constant 'a' so that a quadratic expression becomes a perfect square trinomial.": [
+    "Ensure factual accuracy by cross-verifying information"
+  ],
+  "Calculate the fractional area of a pentagon formed by connecting certain points in a square.": [
+    "Offer a step-by-step explanation of the process when describing complex scientific phenomena."
+  ],
+  "Determine the distance traveled based on speed variations and corresponding changes in travel time.": [
+    "Clarify hierarchical relationships between concepts to avoid confusion."
+  ],
+  "Determine the minimum number of reciprocal operations needed to return a given number to itself using a calculator's reciprocal function.": [
+    "Include all main components in the answer."
+  ],
+  "Calculate the difference between two fractions composed of sums of consecutive even and odd numbers.": [
+    "Break down complex processes into clear, sequential steps."
+  ],
+  "Find the complex conjugate sum of two exponential terms given their original sum.": [
+    "Ensure comparisons are clearly structured and specific."
+  ],
+  "Calculate the integer part of a specified arithmetic expression involving fractions.": [
+    "Provide a comprehensive list of benefits."
+  ],
+  "Evaluate nested operations using a custom-defined binary operator.": [
+    "Use standard and universally recognized terms to describe components."
+  ],
+  "Multiply a whole number by a mixed fraction.": [
+    "Explain processes step-by-step for clarity."
+  ],
+  "Calculate the value of S_6 for a sequence defined by initial conditions involving x and its reciprocal.": [
+    "Provide detailed, step-by-step explanations when describing complex processes."
+  ],
+  "Convert a decimal number to a fraction and simplify it by dividing by three.": [
+    "Provide specific details about the function to enhance clarity and depth."
+  ],
+  "Calculate the value of an expression involving powers and reciprocals of given fractions.": [
+    "Use a structured format to guide the reader through the steps."
+  ],
+  "Determine the ratio of two linear combinations of variables given their pairwise ratios.": [
+    "Compare with alternatives to highlight advantages."
+  ],
+  "Evaluate nested operations defined by a custom binary operator.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Find the minimum value of the expression involving positive constants a and b, given the maximum value of a linear objective function over a feasible region defined by linear inequalities.": [
+    "Highlight distinguishing features relevant to the question."
+  ],
+  "Determine the common ratio of an infinite geometric series.": [
+    "Explain the underlying mechanisms for observed effects."
+  ],
+  "Calculate the probability of selecting a factor below a specified threshold from the set of positive factors of a given number.": [
+    "Incorporate all relevant categories when describing system components."
+  ],
+  "Solve for x in a fractional equation involving a squared term.": [
+    "Ensure factual accuracy by verifying information from reliable sources."
+  ],
+  "Calculate the probability that \\(\\sin x\\) falls within a specified range for a random variable \\(x\\) in a given interval.": [
+    "Highlight essential functions over superficial characteristics."
+  ],
+  "Determine the ratio of the fifth term between two arithmetic sequences based on the given ratio of their partial sums.": [
+    "Ensure factual accuracy in stating the correct capital city."
+  ],
+  "Determine the integer n for which the product sequence equals a specified fraction when square rooted.": [
+    "Ensure factual accuracy in stated facts."
+  ],
+  "Determine the value of f(2016) for a given periodic odd function using provided functional equations and initial conditions.": [
+    "Use visual aids to enhance clarity and detail in technical explanations."
+  ],
+  "Calculate |ab| for given hyperbola and ellipse equations with specified focus coordinates.": [
+    "Address multiple facets of the question to ensure a comprehensive response."
+  ],
+  "Determine the time when an object hits the ground using its height equation.": [
+    "Cite credible sources to support claims."
+  ],
+  "Calculate the arithmetic mean of a specified range of integers.": [
+    "Specify concrete features rather than vague generalities to enhance clarity and informativeness."
+  ],
+  "Determine the eccentricity of an ellipse given its relationship with a tangent circle centered at its right focus.": [
+    "Address multiple dimensions of the topic to ensure a comprehensive response."
+  ],
+  "Determine the greatest common divisor of two factorial numbers.": [
+    "Address both physical and behavioral aspects when comparing species."
+  ],
+  "Simplify an algebraic fraction with variable exponent terms.": [
+    "Use bullet points or numbered lists to organize information and improve readability."
+  ],
+  "Determine the greatest common divisor of a polynomial expression involving a variable known to be a multiple of a specified number and the variable itself.": [
+    "Use specific examples to illustrate general characteristics."
+  ],
+  "Find the intersection point of two linear equations.": [
+    "Ensure factual accuracy by cross-verifying information from reliable sources."
+  ],
+  "Determine the common ratio of a geometric progression formed by three given expressions involving x.": [
+    "Instruct with specific details for procedural tasks."
+  ],
+  "Calculate the volume of a cylinder formed by rotating a square around one of its axes of symmetry.": [
+    "Ensure factual accuracy in responses."
+  ],
+  "Determine the greatest common divisor of two numbers given their least common multiple and ratio.": [
+    "Organize information with a clear structure and logical flow."
+  ],
+  "Perform addition of two octal numbers and express the result in base 8.": [
+    "Include all relevant factors when discussing complex phenomena."
+  ],
+  "Calculate the sum of the GCD and LCM of two specified integers.": [
+    "Ensure factual accuracy in identifying specific details."
+  ],
+  "Determine the number of ways to partition a set of 12 distinct items into three subsets of sizes 4, 6, and 2, given fixed assignments for certain elements.": [
+    "Identify and include only the relevant components in your answer."
+  ],
+  "Calculate the total number of unique ordered triples that can be formed with replacement from a set of twelve distinct elements.": [
+    "Ensure factual accuracy in stating the capital of France."
+  ],
+  "Determine for how many integers n in a specified range, the fraction n/12 results in a repeating decimal.": [
+    "Offer a comprehensive comparison by covering multiple relevant aspects of the subjects."
+  ],
+  "Calculate the number of hexagons on a polyhedral object given the number of pentagons.": [
+    "Use appropriate level of detail for the target audience to ensure comprehension and depth."
+  ],
+  "Calculate the value of an exponential expression and express the result as an integer.": [
+    "Stick to the primary topic and avoid including irrelevant details."
+  ],
+  "Calculate the number of vertices in an icosidodecahedron.": [
+    "Provide specific examples to illustrate contrasts between concepts."
+  ],
+  "Calculate the probability that the square root of a randomly chosen two-digit number is less than eight.": [
+    "Address all relevant aspects of the topic."
+  ],
+  "Calculate the number of distinct sequences of jumps and steps for reaching a target position using moves of fixed lengths.": [
+    "Provide specific details to enhance answer completeness."
+  ],
+  "Calculate the probability of obtaining less than 4 successes in 12 independent Bernoulli trials with equal success probability.": [
+    "Provide specific examples to illustrate the causes of climate change."
+  ],
+  "Calculate total distance walked in miles based on directional movements and block length.": [
+    "Address behavioral traits in addition to physical characteristics to provide a comprehensive comparison."
+  ],
+  "Convert repeating decimals to fractions and find their sum.": [
+    "Incorporate concrete examples to illustrate key points."
+  ],
+  "Perform addition in base 12 arithmetic.": [
+    "Specify concrete examples to enhance clarity and accuracy."
+  ],
+  "Convert liters to pints using a given conversion factor.": [
+    "Highlight specific environmental benefits of renewable energy sources."
+  ],
+  "Solve an inequality involving quadratic expressions for x and express the solution set in interval notation.": [
+    "Support claims with specific examples and data."
+  ],
+  "Calculate future time on a 12-hour clock after a specified number of hours have passed.": [
+    "Provide specific examples to illustrate the benefits of renewable energy sources."
+  ],
+  "Calculate the ratio of volumes for two cylinders formed by rolling a 6x9 rectangle in different orientations.": [
+    "Incorporate specific examples to clarify and support general statements."
+  ],
+  "Determine the polynomial g(x) given f(x) and their sum.": [
+    "Ensure factual accuracy by double-checking information against reliable sources."
+  ],
+  "Calculate the total number of items in a triangular stack where each row decreases by one item until reaching a specified minimum.": [
+    "Use specific examples to illustrate key points."
+  ],
+  "Determine the value of k for which a given linear equation represents a tangent to a specified parabolic curve.": [
+    "Ensure answers contain correct factual information."
+  ],
+  "Calculate the numerical discrepancy between one billion based on correct mathematical definition and an incorrect assertion.": [
+    "Include key information such as the name of the capital city."
+  ],
+  "Solve for x in an equation involving powers of linear expressions.": [
+    "Provide specific examples to illustrate the benefits of a balanced diet."
+  ],
+  "Determine the polynomial h(x) by isolating it from an equation involving polynomials.": [
+    "Support claims with specific examples and evidence to enhance credibility and impact."
+  ],
+  "Apply Horner's method to evaluate a polynomial at a given point.": [
+    "Provide specific examples to illustrate key points."
+  ],
+  "Determine the value of x for which the inverse function f^(-1)(x) is undefined.": [
+    "Ensure answers include all key factors."
+  ],
+  "Determine the minimum value of a given rational function for positive x values.": [
+    "Support claims with examples to enhance credibility and clarity."
+  ],
+  "Determine the angle A that maximizes the expression cos(A) + 2*cos((B+C)/2) in a triangle ABC and find the corresponding maximum value.": [
+    "Provide a step-by-step explanation for complex processes to ensure clarity and completeness."
+  ],
+  "Calculate the value of variable a given its inverse relationship with b squared for different values of b.": [
+    "Address both technical and ethical challenges in AI alignment."
+  ],
+  "Determine the coefficient 's' in a quadratic equation given one complex root.": [
+    "Use simple, accessible language to explain complex processes."
+  ],
+  "Calculate the sum of three fractional numbers with denominators as powers of ten.": [
+    "Use bullet points to enhance readability and organization."
+  ],
+  "Find the sum of two middle numbers in a sequence of four consecutive integers given the sum of the first and last number.": [
+    "Provide specific examples to illustrate key factors."
+  ],
+  "Calculate the result of a difference of squares divided by a constant.": [
+    "Identify primary human-induced factors in climate change discussions."
+  ],
+  "Evaluate an expression involving quadratic and linear functions at a specific point.": [
+    "Incorporate specific details and examples to enhance clarity and depth of explanation."
+  ],
+  "Determine the y-coordinate of point Y such that line segments AB and XY are parallel.": [
+    "Support claims with specific examples and data to enhance credibility and clarity."
+  ],
+  "Determine the distance between the foci of a hyperbola given its asymptotes and a point it passes through.": [
+    "Consider both human and natural factors when discussing causes of climate change."
+  ],
+  "Determine the value of q for which the minimum value of the quadratic function y = x^2 + px + q is zero.": [
+    "Explain the underlying mechanisms, not just the end results."
+  ],
+  "Find the minimum sum of two integers whose product is a constant.": [
+    "Detail key processes and components in scientific explanations."
+  ],
+  "Evaluate an exponential expression with base 10 and logarithmic exponent.": [
+    "Ensure completeness by covering all relevant aspects of the topic."
+  ],
+  "Calculate the total number of outfit combinations using given items.": [
+    "Provide a balanced perspective by acknowledging both benefits and potential drawbacks."
+  ],
+  "Calculate the sum of all possible group sizes when dividing a total count into equal groups under specified minimum conditions.": [
+    "Identify and explain multiple contributing factors."
+  ],
+  "Calculate the number of combinations for selecting one item from a set A and two items from a set B without regard to order.": [
+    "Provide a step-by-step explanation for complex processes."
+  ],
+  "Calculate the number of participants based on a given ratio.": [
+    "Break down complex processes into clear, sequential steps for better understanding."
+  ],
+  "Find the least odd integer composed of four distinct prime factors.": [
+    "Provide specific examples to illustrate benefits."
+  ],
+  "Calculate the number of distinct departure sequences for six trains divided into two groups of three, with specified constraints.": [
+    "Explain the importance of each feature to enhance understanding."
+  ],
+  "Determine the total number of schools based on ranking positions and team composition.": [
+    "Specify hardware components explicitly."
+  ],
+  "Calculate the number of unique triangles that can be formed using selected points on two adjacent sides of a rectangle.": [
+    "Ensure factual accuracy by verifying key information against reliable sources."
+  ],
+  "Calculate the number of ways to distribute 10 identical items among 4 distinct groups such that each group gets at least one item.": [
+    "Include all relevant factors in your explanation to ensure completeness."
+  ],
+  "Calculate the number of combinations to choose a committee with specified gender requirements.": [
+    "Incorporate specific examples to illustrate the effects of climate change on polar bears."
+  ],
+  "Calculate the conditional probability of one event given another using provided percentages.": [
+    "Provide a comprehensive list of factors with context."
+  ],
+  "Determine the units digit of the product of the initial three positive integers that are not prime.": [
+    "Support claims with specific examples and data."
+  ],
+  "Count all four-digit numbers where the product of differences between non-adjacent digits is negative.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Determine the number of configurations for the base row of a five-level sign pyramid such that the apex displays a '-' sign.": [
+    "Explain key mechanisms in detail."
+  ],
+  "Estimate the proportion of students scoring 110 or higher in a normally distributed dataset.": [
+    "Provide a comprehensive analysis that includes all major contributing factors."
+  ],
+  "Determine the count of four-digit multiples of 5 between 4000 and 5999 with digits in the second and third positions satisfying 3 ≤ b < c ≤ 6.": [
+    "Draw explicit comparisons when answering questions that ask for differences between two subjects."
+  ],
+  "Calculate the probability that two randomly selected digits from an 8-sided die and their combination form a number divisible by 4.": [
+    "Provide specific examples to clarify and substantiate claims."
+  ],
+  "Determine the units digit of a prime number in an arithmetic sequence of four primes where each term increases by 6 and the first prime is greater than 5.": [
+    "Provide explanations for listed causes to enhance understanding."
+  ],
+  "Determine the count of single digit values for C such that the number 1C3 is divisible by 3.": [
+    "Define key terms clearly and concisely."
+  ],
+  "Calculate the value of a mathematical expression involving exponentiation and arithmetic operations.": [
+    "Include all key components and stages of the process to ensure completeness."
+  ],
+  "Multiply two polynomials.": [
+    "Provide comprehensive information to fully address the question."
+  ],
+  "Calculate the count of three-digit numbers containing at least one '4' but excluding any '6'.": [
+    "Ensure factual accuracy by verifying information against reliable sources."
+  ],
+  "Determine the coefficient of a specified term in a binomial expansion.": [
+    "Ensure answers are comprehensive by covering all major aspects of the question."
+  ],
+  "Determine how many additional workers are required to complete a task in a shorter time frame, given constant work rates.": [
+    "Ensure factual accuracy by verifying information against reliable sources."
+  ],
+  "Determine how many two-digit numbers yield a units digit of 6 when the sum of their digits is subtracted from them.": [
+    "Focus on directly relevant information to maintain clarity and conciseness."
+  ],
+  "Determine the count of unique four-digit numbers ending in 45 that are also divisible by 5.": [
+    "Provide a comprehensive list of contributing factors and briefly explain each."
+  ],
+  "Evaluate a nested operation defined by a custom binary operator.": [
+    "Provide a comprehensive list of components."
+  ],
+  "Determine the last two digits of a 92-digit number divisible by 72, given the pattern of its first 90 digits.": [
+    "Include additional relevant details to enrich the answer."
+  ],
+  "Calculate the floor value of a given number.": [
+    "Detail all key components of the process in a scientific explanation."
+  ],
+  "Calculate the sum of all coefficients in the expansion of (3x-1)^7.": [
+    "Ensure comprehensive coverage of all relevant aspects when addressing a question."
+  ],
+  "Calculate the number of distinct distributions of distinguishable items into indistinguishable containers.": [
+    "Address multiple facets of the topic."
+  ],
+  "Determine the count of three-digit numbers excluding specified digits.": [
+    "Include all major components in a system description."
+  ],
+  "Count two-digit numbers where the sum of their digits forms a perfect square up to 25.": [
+    "Support claims with specific examples."
+  ],
+  "Determine the value of f for a given integer using specified conditions.": [
+    "Ensure factual accuracy by verifying information from reliable sources."
+  ],
+  "Determine the number of ways to arrange five people in a booth with seating constraints.": [
+    "Specify specific types of greenhouse gases when discussing climate change factors."
+  ],
+  "Calculate the polynomial quotient of x^5 + 7 divided by x + 1.": [
+    "Ensure factual accuracy by verifying the information provided."
+  ],
+  "Determine the number of intersections between the sine function and an exponential decay function over a specified interval.": [
+    "Provide comprehensive information beyond physical appearance to enrich understanding."
+  ],
+  "Find the maximum constant C such that an inequality involving x, y, z and alpha holds true under specified conditions.": [
+    "Address all relevant factors in your answer."
+  ],
+  "Determine the number of integer values for n such that the expression 4000 * (2/5)^n results in an integer.": [
+    "Incorporate both hardware and software features when describing modern smartphones."
+  ],
+  "Determine the maximum value of ω for which the cosine function with phase shift is both odd and monotonically decreasing in a specified interval.": [
+    "Provide definitions and examples to enhance understanding and relevance of listed features."
+  ],
+  "Determine the number of distinct outcomes possible when inserting parentheses in a given mathematical expression involving powers of two.": [
+    "Include all major contributing factors when addressing the causes of climate change."
+  ],
+  "Determine the maximum integer N for which the nested floor square root expression equals 4, then find the sum of its digits.": [
+    "Support claims with specific examples and data."
+  ],
+  "Determine the number of solutions for a system involving a linear equation and an absolute value equation in two variables.": [
+    "Include human activities as a primary cause when discussing climate change."
+  ],
+  "Determine the sum of the coefficients of the binomial expansion based on the condition that the coefficient of x^3 is the maximum.": [
+    "Use bullet points or numbered lists to enhance readability and highlight key points."
+  ],
+  "Simplify an algebraic expression involving exponents and multiplication.": [
+    "Provide explanations for listed components to enhance understanding."
+  ],
+  "Determine the number of values for which a linear equation intersects the vertex of a quadratic function.": [
+    "Include all major contributing factors in your response."
+  ],
+  "Find the constant term in the polynomial expansion.": [
+    "Include all major components of the process in your explanation."
+  ],
+  "Find the smallest positive integer that leaves a remainder of 1 when divided by 5 and a remainder of 2 when divided by 3.": [
+    "Include both hardware and software when describing a computer's components."
+  ],
+  "Determine the number and sum of possible values for a function at a specific point based on functional equation constraints.": [
+    "Provide specific details to clarify differences."
+  ],
+  "Determine the range of a given odd exponential function and find the minimum value of lambda for which an inequality involving the function's values at two points in a specified interval always holds.": [
+    "Include a comprehensive list of relevant factors when discussing complex issues."
+  ],
+  "Determine the value of a function at a specific point using given functional equations and boundary conditions.": [
+    "Compare multiple aspects to provide a comprehensive comparison."
+  ],
+  "Determine the y-coordinate of a point on a quadratic function given its vertex and another point.": [
+    "Provide specific details when explaining historical events."
+  ],
+  "Determine the original two-digit step count based on transformations and final step total.": [
+    "Detail all core functions of the operating system to ensure completeness."
+  ],
+  "Determine if the area of triangle AOB formed by the intersection points of a line with an ellipse is a constant when certain conditions about elliptic points are met.": [
+    "Support claims with evidence to enhance credibility and depth."
+  ],
+  "Find the length of segment AB in an intersection scenario involving two circles where certain product conditions are met.": [
+    "Provide a detailed and comprehensive explanation."
+  ],
+  "Calculate the value of an expression involving coordinates of the intersection point between a line segment and its perpendicular bisector.": [
+    "Ensure factual accuracy by verifying the information provided."
+  ],
+  "Calculate the distance between two intersection points of a line segment with a unit sphere.": [
+    "Provide concrete examples to illustrate key points."
+  ],
+  "Determine the y-intercept of a line passing through two specified points.": [
+    "Ensure factual accuracy in stating specific facts."
+  ],
+  "Determine the number of possible locations for a point R such that distances PQ, QR, and PR are equal.": [
+    "Use specific examples to illustrate benefits."
+  ],
+  "Calculate the gradient of a multivariable function at a specified point and determine its directional derivative along a given vector.": [
+    "Keep the response relevant to the question."
+  ],
+  "Calculate the probability of a randomly generated point falling below a specified linear boundary.": [
+    "Provide a comprehensive list of factors when discussing complex issues."
+  ],
+  "Determine the meeting time of two vehicles traveling towards each other with different speeds.": [
+    "Enumerate specific components rather than using vague categories"
+  ],
+  "Calculate the length of a line segment connecting a point on a circle to the midpoint of a minor arc defined by two other points on the same circle.": [
+    "Include both natural and human factors when discussing climate change."
+  ],
+  "Determine the value of c for which a given linear equation is tangent to a specified parabola.": [
+    "Support claims with specific examples and evidence."
+  ],
+  "Calculate the total distance traveled by a laser beam bouncing off two axes before reaching a specified endpoint.": [
+    "Specify concrete examples to enhance clarity and accuracy."
+  ],
+  "Find the minimum distance from the midpoint of a moving line segment with endpoints on a parabola to the y-axis.": [
+    "Consider all key factors in your answer."
+  ],
+  "Calculate the distance between two points in a rectangular coordinate system.": [
+    "Explain the purpose and benefits of each feature when discussing key elements of a well-designed website."
+  ],
+  "Determine the value of 'a' for which the distance condition |PB| = 2|PA| holds true as point P varies on a given circle.": [
+    "Specify concrete examples to illustrate abstract concepts."
+  ],
+  "Determine the value of k for which two given points lie on a horizontal line.": [
+    "A good team leader should possess a range of qualities, not just one."
+  ],
+  "Calculate the integer x for which the equation sqrt(a) + sqrt(b) = x holds true with given positive integers a and b.": [
+    "Ensure comprehensive coverage of all major aspects of the topic."
+  ],
+  "Simplify an algebraic expression involving division and substitution with a given value for the variable.": [
+    "Provide detailed explanations for each factor."
+  ],
+  "Rationalize the denominator of a given algebraic expression involving cube roots.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Determine the constant term 'c' for which the given quadratic equation's roots match the specified form.": [
+    "Enumerate specific benefits over vague generalizations."
+  ],
+  "Calculate the sum of the floor values of square roots from 1 to 25.": [
+    "Use clear and simple language when explaining scientific processes to non-experts.",
+    "Incorporate analogies and simplifications to aid comprehension of complex processes."
+  ],
+  "Find an irrational number that when multiplied by \\(\\sqrt{8}\\) results in a rational number.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Calculate the area of an equilateral triangle given distances from an internal point to its vertices.": [
+    "Incorporate specific examples to illustrate the benefits."
+  ],
+  "Determine the distance between the intersection points of two quadratic functions based on given distances involving a linear function.": [
+    "Identify and explain the primary drivers of the phenomenon."
+  ],
+  "Find the product of four interdependent square root equations involving real numbers.": [
+    "Specify precise quantities for ingredients in recipes."
+  ],
+  "Simplify the product of square roots expressed in terms of x.": [
+    "Provide a comprehensive list of contributing factors."
+  ],
+  "Determine the maximum value of an expression involving square roots under linear constraints.": [
+    "Provide a step-by-step explanation for complex processes."
+  ],
+  "Determine the exponent when expressing a ratio of roots as a single base number.": [
+    "Provide specific examples and practical tips to clarify and illustrate each factor."
+  ],
+  "Determine the center of a circle that passes through a specified point and is tangent to a given parabola at another specified point.": [
+    "Use comparative analysis to highlight contrasts between subjects."
+  ],
+  "Calculate the length of a chord in a circle given its central angle and the circle's circumference.": [
+    "Address multiple challenges to provide a comprehensive response."
+  ],
+  "Calculate the length of side AB in a right triangle given the lengths of two medians.": [
+    "Organize information in a logical sequence to enhance comprehension."
+  ],
+  "Calculate the probability that the absolute difference between two spins of a five-sector numbered spinner is less than 3.": [
+    "Ensure answers have a logical structure with clear points and supporting evidence."
+  ],
+  "Calculate the perimeter of a square based on the dimensions of congruent internal rectangles with known perimeters.": [
+    "Provide specific examples and evidence to support claims about complex topics."
+  ],
+  "Calculate the value of X in a factor tree where non-prime numbers are products of their children's values.": [
+    "Provide a comprehensive list of effects with supporting facts."
+  ],
+  "Determine the constant y-coordinate of the intersection point of two perpendicular tangents to a parabola y=x^2.": [
+    "Limit the scope to the question's requirements."
+  ],
+  "Calculate the area of a rectangle formed by adding 3'' by 3'' squares sequentially up to a specified stage.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ],
+  "Calculate the ratio of the volume of an inscribed cone to its enclosing prism.": [
+    "Support claims with current data and statistical evidence."
+  ],
+  "Find the value of P given polynomial equations involving x and y.": [
+    "Focus on the essential information when answering questions."
+  ],
+  "Determine the fraction of Roger's 22 coins representing states that joined the union between 1780 and 1789.": [
+    "Provide step-by-step instructions for a clear process."
+  ],
+  "Solve for an expression involving three variables given a system of quadratic equations.": [
+    "Maintain Conciseness and Relevance"
+  ],
+  "Determine the coefficient of a specified term in a polynomial product expansion.": [
+    "Specify multiple specific causes instead of vague generalizations."
+  ],
+  "Evaluate nested function compositions based on piecewise-defined functions.": [
+    "Provide specific examples to illustrate abstract concepts."
+  ],
+  "Determine the equation of a line based on vector projection conditions.": [
+    "Consider all relevant factors in your answer."
+  ],
+  "Determine the number of edges in a modified polyhedron after cutting off one corner of a cube.": [
+    "Highlight specific examples of the primary causes of climate change to enhance clarity and relevance."
+  ],
+  "Calculate the amount of paint required to cover a 'snake' structure made up of 2016 unit cubes.": [
+    "Include comprehensive explanations of key factors."
+  ],
+  "{\n  \"taskDescription\": {\n    \"description\": \"Determine \\(x^2 + y^2 + z^2\\) for a matrix satisfying orthogonality condition.\"\n  }\n}\n```\n\n### Explanation:\n- The original problem involves finding the sum of squares of variables in a matrix under an orthogonality constraint.\n- The key focus is on solving for \\(x^2 + y^2 + z^2\\) where the matrix \\(\\mathbf{M}\\) satisfies \\(\\mathbf{M}^T \\mathbf{M} = \\mathbf{I}\\).\n- This aligns with linear algebra concepts specifically dealing with orthogonal matrices.\n- The provided solution succinctly captures this essence without delving into specific matrix elements or intermediate steps.": [
+    "Provide detailed examples for each benefit to enhance clarity and relevance."
+  ],
+  "Calculate the required amount of Compound Y for preparing a specified volume of a mixture based on its composition ratio.": [
+    "Use specific examples to illustrate points and enhance understanding."
+  ],
+  "Calculate the difference in distance run by two individuals going around a square block with a known street width.": [
+    "Address multiple key factors to provide a comprehensive answer."
+  ],
+  "Determine for which values of n in the set {1,2,...,15}, the expression n^n + 1 yields a prime number.": [
+    "Support claims with specific examples and data."
+  ],
+  "Calculate the sixth power of a given 2x2 matrix.": [
+    "Identify and specify the key contributing factors in detail."
+  ],
+  "Determine the maximum value of the sum of squared distances between three unit vectors.": [
+    "Ensure factual accuracy in statements about environmental impacts."
+  ],
+  "Calculate the sum of inverse function values for specified inputs.": [
+    "Ensure that all preparatory steps are included before starting the main process."
+  ],
+  "Determine the value of n in an arithmetic sequence such that its sum equals a perfect square.": [
+    "Use a structured format to present information."
+  ],
+  "Determine net financial outcome from sequential sale and repurchase transactions.": [
+    "Include both short-term and long-term benefits to provide a comprehensive view."
+  ],
+  "Calculate the sum of inverse function values for given inputs.": [
+    "Incorporate a comprehensive set of relevant principles and concepts."
+  ],
+  "Determine the maximum output of a recursive function defined for positive integers with specified base and recursive cases.": [
+    "Provide specific examples and details to enhance understanding and relevance."
+  ],
+  "Calculate the determinant of the projection matrix onto a given vector.": [
+    "Provide detailed, step-by-step instructions for process-oriented questions."
+  ],
+  "Calculate the amount one individual needs to contribute to equalize shared earnings among a group.": [
+    "Provide context around key events."
+  ],
+  "Calculate the number of space diagonals in a specified convex polyhedron.": [
+    "Incorporate comprehensive factors when discussing complex issues like climate change."
+  ],
+  "Calculate the total sum of pages read over multiple days with varying daily averages and a final day's additional count.": [
+    "Include essential pre-baking steps such as preheating the oven."
+  ],
+  "Determine the remaining amount after purchasing the maximum number of items and necessary containers within a budget.": [
+    "Support claims with evidence and context."
+  ],
+  "Determine the initial number of participants in a round-robin tournament given match totals and early exits.": [
+    "Ensure factual accuracy by cross-verifying information from reliable sources."
+  ],
+  "Calculate the total time spent on the bus based on given schedule and arrival time.": [
+    "Provide a detailed, step-by-step explanation for complex processes."
+  ],
+  "Determine the number of parts needed for one color in a mixture given a total quantity and a specified ratio between two components.": [
+    "Provide explanations for listed items to enhance understanding."
+  ],
+  "Calculate the average of all possible values of k for which the quadratic equation x^2 - kx + 24 has positive integer roots.": [
+    "Address multiple strategies for achieving the goal."
+  ],
+  "Determine the value of y that minimizes the maximum absolute difference between x squared and the product of x and y for all x in the interval [0,1].": [
+    "Provide a detailed, step-by-step explanation for complex processes."
+  ],
+  "Determine the minimum value of a function involving sums of square roots over all real values of x.": [
+    "Organize information in a logical sequence to enhance comprehension."
+  ],
+  "Find the sine of an angle given a trigonometric equation involving cosine and sine functions.": [
+    "Provide a detailed, step-by-step explanation to clarify complex processes."
+  ],
+  "Determine the angle between two vectors given their magnitudes and a perpendicularity condition.": [
+    "Provide context and explanation for each factor mentioned."
+  ],
+  "Determine the area ratios of three sub-triangles formed by connecting an interior point to the vertices of a larger triangle.": [
+    "Provide comprehensive explanations for listed items."
+  ],
+  "Solve a complex arithmetic expression involving fractions, decimals, and operations including addition, subtraction, multiplication, division, and nested parentheses.": [
+    "Provide a detailed explanation of the process to ensure clarity and completeness."
+  ],
+  "Calculate the product of trigonometric expressions involving sine functions at specified angles.": [
+    "Ensure factual accuracy by cross-verifying information."
+  ]
+}
